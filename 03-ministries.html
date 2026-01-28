@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban Ngành - Hội Thánh Tin Lành Bethlehem Tiền Giang</title>
+    <meta name="description" content="Các ban ngành phục vụ trong Hội Thánh: Thanh Niên, Thiếu Nhi, Truyền Giáo, Ca Đoàn, và các ban khác.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .ministries-intro {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .ministry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .ministry-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .ministry-card:hover {
+            transform: translateY(-5px);
+        }
+        .ministry-header {
+            padding: 1.5rem;
+            color: white;
+        }
+        .ministry-content {
+            padding: 1.5rem;
+        }
+        .ministry-leader {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        .leader-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        .join-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+        .join-button:hover {
+            background: var(--accent-color);
+        }
+        .ministry-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo Hội Thánh" class="logo-img">
+                <div class="logo-text">
+                    <h1>HỘI THÁNH TIN LÀNH</h1>
+                    <div class="church-name">BETHLEHEM</div>
+                    <div class="church-location">Tiền Giang, Việt Nam</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav class="main-nav">
+                <ul id="mainNav">
+                    <li><a href="index.html">🏠 Trang Chủ</a></li>
+                    <li><a href="about.html">📖 Giới Thiệu</a></li>
+                    <li><a href="ministries.html" class="active">👥 Ban Ngành</a></li>
+                    <li><a href="sermons.html">📚 Bài Giảng</a></li>
+                    <li><a href="news.html">📢 Tin Tức</a></li>
+                    <li><a href="giving.html">❤️ Dâng Hiến</a></li>
+                    <li><a href="contact.html">📞 Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title">Các Ban Ngành Phục Vụ</h1>
+            
+            <!-- Giới thiệu -->
+            <div class="ministries-intro">
+                <h2 style="color: white;">"Vả, như trong một thân thể chúng ta có nhiều chi thể, 
+                mà các chi thể không có cùng một chức năng, thì cũng vậy, chúng ta là nhiều người 
+                mà hiệp nên một thân trong Đấng Christ, và ai nấy đều là các chi thể của nhau."</h2>
+                <p style="text-align: right; font-size: 1.1rem;">— Rô-ma 12:4-5</p>
+            </div>
+
+            <p style="margin-bottom: 2rem; font-size: 1.1rem;">
+                Mỗi tín hữu đều có ân tứ và khả năng riêng để phục vụ trong thân thể Đấng Christ. 
+                Hội Thánh chúng tôi có các ban ngành sau đây để bạn có thể tham gia và phục vụ:
+            </p>
+
+            <!-- Danh sách ban ngành -->
+            <div class="ministry-grid">
+                <!-- Ban Thanh Niên -->
+                <div class="ministry-card">
+                    <div class="ministry-header" style="background: #4CAF50;">
+                        <h3>👨‍🎤 BAN THANH NIÊN</h3>
+                    </div>
+                    <div class="ministry-content">
+                        <p><strong>Độ tuổi:</strong> 18-35 tuổi</p>
+                        <p><strong>Sứ mệnh:</strong> Đào tạo thế hệ trẻ trở thành môn đồ mạnh mẽ của Chúa, 
+                        sống đạo tích cực và truyền giáo cho bạn bè.</p>
+                        
+                        <h4>📅 Lịch sinh hoạt:</h4>
+                        <table class="schedule-table">
+                            <tr>
+                                <th>Thời gian</th>
+                                <th>Hoạt động</th>
+                            </tr>
+                            <tr>
+                                <td>Thứ 7 (19:00-21:00)</td>
+                                <td>Sinh hoạt chung, học Kinh Thánh</td>
+                            </tr>
+                            <tr>
+                                <td>Chủ Nhật (14:00-16:00)</td>
+                                <td>Hoạt động ngoại khóa, thể thao</td>
+                            </tr>
+                            <tr>
+                                <td>Hàng tháng</td>
+                                <td>Tiệc thân hữu, dã ngoại</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="ministry-leader">
+                            <img src="assets/images/leader-youth.jpg" alt="Trưởng ban Thanh Niên" class="leader-avatar">
+                            <div>
+                                <p><strong>Trưởng ban:</strong> Chấp sự Trần Văn Minh</p>
+                                <p>📞 0909 777 888</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?department=youth" class="join-button">Tham Gia Ngay</a>
+                    </div>
+                </div>
+
+                <!-- Ban Thiếu Nhi -->
+                <div class="ministry-card">
+                    <div class="ministry-header" style="background: #FF9800;">
+                        <h3>👶 BAN THIẾU NHI</h3>
+                    </div>
+                    <div class="ministry-content">
+                        <p><strong>Độ tuổi:</strong> 3-12 tuổi</p>
+                        <p><strong>Sứ mệnh:</strong> Dạy trẻ em biết Chúa từ thuở nhỏ qua những bài học 
+                        Kinh Thánh đơn giản, vui nhộn.</p>
+                        
+                        <h4>📅 Lịch sinh hoạt:</h4>
+                        <table class="schedule-table">
+                            <tr>
+                                <th>Thời gian</th>
+                                <th>Hoạt động</th>
+                            </tr>
+                            <tr>
+                                <td>Chủ Nhật (8:00-10:00)</td>
+                                <td>Trường Chúa Nhật</td>
+                            </tr>
+                            <tr>
+                                <td>Thứ 7 (9:00-11:00)</td>
+                                <td>CLB Thiếu nhi (vẽ, hát, kể chuyện)</td>
+                            </tr>
+                            <tr>
+                                <td>Hàng quý</td>
+                                <td>Tiệc sinh nhật tập thể</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="ministry-leader">
+                            <img src="assets/images/leader-children.jpg" alt="Trưởng ban Thiếu Nhi" class="leader-avatar">
+                            <div>
+                                <p><strong>Trưởng ban:</strong> Chị Nguyễn Thị Thu</p>
+                                <p>📞 0909 222 333</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?department=children" class="join-button">Đăng Ký Cho Bé</a>
+                    </div>
+                </div>
+
+                <!-- Ban Truyền Giáo -->
+                <div class="ministry-card">
+                    <div class="ministry-header" style="background: #2196F3;">
+                        <h3>🌍 BAN TRUYỀN GIÁO</h3>
+                    </div>
+                    <div class="ministry-content">
+                        <p><strong>Thành viên:</strong> Mọi tín hữu</p>
+                        <p><strong>Sứ mệnh:</strong> Rao truyền Phúc Âm cho người chưa tin tại địa phương 
+                        và hỗ trợ công tác truyền giáo toàn cầu.</p>
+                        
+                        <h4>🏆 Hoạt động chính:</h4>
+                        <ul>
+                            <li>Thăm viếng, làm chứng mỗi thứ 6</li>
+                            <li>Tổ chức các buổi nhà lầu vào Chủ Nhật</li>
+                            <li>Hỗ trợ truyền giáo tại vùng sâu vùng xa</li>
+                            <li>Phát quà từ thiện cho người nghèo</li>
+                            <li>Tổ chức các khóa học Kinh Thánh cơ bản</li>
+                        </ul>
+                        
+                        <div class="ministry-leader">
+                            <img src="assets/images/leader-mission.jpg" alt="Trưởng ban Truyền Giáo" class="leader-avatar">
+                            <div>
+                                <p><strong>Trưởng ban:</strong> Chấp sự Lê Thị Hồng</p>
+                                <p>📞 0909 555 666</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?department=mission" class="join-button">Tham Gia Truyền Giáo</a>
+                    </div>
+                </div>
+
+                <!-- Ca Đoàn -->
+                <div class="ministry-card">
+                    <div class="ministry-header" style="background: #9C27B0;">
+                        <h3>🎵 CA ĐOÀN</h3>
+                    </div>
+                    <div class="ministry-content">
+                        <p><strong>Yêu cầu:</strong> Biết hát, có khả năng âm nhạc</p>
+                        <p><strong>Sứ mệnh:</strong> Dâng lên Chúa những bài thánh ca hay, 
+                        giúp cộng đồng thờ phượng Chúa cách tốt nhất.</p>
+                        
+                        <h4>🎤 Các đội:</h4>
+                        <ul>
+                            <li>Ca đoàn chính (hát Chủ Nhật sáng)</li>
+                            <li>Ca đoàn thanh niên (hát tối thứ 4)</li>
+                            <li>Đội hợp xướng (các dịp đặc biệt)</li>
+                            <li>Đệm đàn: piano, guitar, trống</li>
+                        </ul>
+                        
+                        <h4>📅 Lịch tập:</h4>
+                        <p>Thứ 5: 19:00-21:00 (tập chung)<br>
+                        Thứ 7: 15:00-17:00 (tập theo đội)</p>
+                        
+                        <div class="ministry-leader">
+                            <img src="assets/images/leader-choir.jpg" alt="Trưởng Ca Đoàn" class="leader-avatar">
+                            <div>
+                                <p><strong>Trưởng ban:</strong> Anh Lê Văn Sáng</p>
+                                <p>📞 0909 444 555</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?department=choir" class="join-button">Thử Giọng Ngay</a>
+                    </div>
+                </div>
+
+                <!-- Ban Tiếp Đón -->
+                <div class="ministry-card">
+                    <div class="ministry-header" style="background: #00BCD4;">
+                        <h3>🤝 BAN TIẾP ĐÓN</h3>
+                    </div>
+                    <div class="ministry-content">
+                        <p><strong>Yêu cầu:</strong> Thân thiện, nhiệt tình</p>
+                        <p><strong>Sứ mệnh:</strong> Đón tiếp, hướng dẫn khách mới và tạo ấn tượng 
+                        tốt đẹp về Hội Thánh.</p>
+                        
+                        <h4>💼 Công việc:</h4>
+                        <ul>
+                            <li>Đứng cửa chào đón mọi người</li>
+                            <li>Phát tài liệu, Kinh Thánh</li>
+                            <li>Hướng dẫn chỗ ngồi, nhà vệ sinh</li>
+                            <li>Chăm sóc khách mới sau buổi nhóm</li>
+                            <li>Ghi nhận thông tin khách mới</li>
+                        </ul>
+                        
+                        <div class="ministry-leader">
+                            <img src="assets/images/leader-welcome.jpg" alt="Trưởng ban Tiếp Đón" class="leader-avatar">
+                            <div>
+                                <p><strong>Trưởng ban:</strong> Chị Phạm Thị Hoa</p>
+                                <p>📞 0909 666 777</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?department=welcome" class="join-button">Tham Gia Tiếp Đón</a>
+                    </div>
+                </div>
+
+                <!-- Ban Kỹ Thuật -->
+                <div class="ministry-card">
+                    <div class="ministry-header" style="background: #795548;">
+                        <h3>🎬 BAN KỸ THUẬT</h3>
+                    </div>
+                    <div class="ministry-content">
+                        <p><strong>Yêu cầu:</strong> Biết về âm thanh, ánh sáng, livestream</p>
+                        <p><strong>Sứ mệnh:</strong> Phục vụ kỹ thuật cho các buổi nhóm và ghi hình 
+                        bài giảng để chia sẻ trực tuyến.</p>
+                        
+                        <h4>🔧 Công việc:</h4>
+                        <ul>
+                            <li>Vận hành âm thanh, ánh sáng</li>
+                            <li>Livestream buổi nhóm</li>
+                            <li>Quay phim, chụp ảnh sự kiện</li>
+                            <li>Chỉnh sửa video bài giảng</li>
+                            <li>Bảo trì thiết bị kỹ thuật</li>
+                        </ul>
+                        
+                        <div class="ministry-leader">
+                            <img src="assets/images/leader-tech.jpg" alt="Trưởng ban Kỹ Thuật" class="leader-avatar">
+                            <div>
+                                <p><strong>Trưởng ban:</strong> Anh Hoàng Văn Tài</p>
+                                <p>📞 0909 888 999</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contact.html?department=tech" class="join-button">Tham Gia Ban Kỹ Thuật</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông báo đặc biệt -->
+            <div class="ministry-highlight">
+                <h3 style="color: white;">🎯 TUYỂN TÌNH NGUYỆN VIÊN</h3>
+                <p>Chúng tôi đang cần thêm tình nguyện viên cho các ban ngành. Dù bạn có ít thời gian hay 
+                chưa có kinh nghiệm, chúng tôi sẽ đào tạo và hỗ trợ bạn.</p>
+                <p><strong>📞 Liên hệ ngay:</strong> Mục sư Nguyễn Văn Mẫn - 0909 111 222</p>
+                <p><em>"Vì Đức Chúa Trời chẳng phải là không công bình mà bỏ quên công việc và lòng yêu thương 
+                của anh em..." (Hê-bơ-rơ 6:10)</em></p>
+            </div>
+
+            <!-- Lịch hoạt động chung -->
+            <section style="margin: 3rem 0; padding: 2rem; background: #f8f9fa; border-radius: 10px;">
+                <h3>📅 LỊCH HOẠT ĐỘNG CÁC BAN NGÀNH</h3>
+                <div style="overflow-x: auto;">
+                    <table class="schedule-table">
+                        <tr>
+                            <th>Thời gian</th>
+                            <th>Thứ 2-6</th>
+                            <th>Thứ 7</th>
+                            <th>Chủ Nhật</th>
+                        </tr>
+                        <tr>
+                            <td>Sáng (8:00-11:00)</td>
+                            <td>Văn phòng mở cửa</td>
+                            <td>CLB Thiếu nhi (9:00-11:00)</td>
+                            <td><strong>Nhóm chung (8:00-10:00)</strong><br>Trường Chúa Nhật</td>
+                        </tr>
+                        <tr>
+                            <td>Chiều (14:00-17:00)</td>
+                            <td>Học Kinh Thánh cá nhân</td>
+                            <td>Tập Ca đoàn (15:00-17:00)<br>Thể thao TN (16:00-18:00)</td>
+                            <td>Hoạt động Thanh niên (14:00-16:00)</td>
+                        </tr>
+                        <tr>
+                            <td>Tối (19:00-21:00)</td>
+                            <td>Nhóm cầu nguyện gia đình</td>
+                            <td><strong>Sinh hoạt Thanh niên (19:00-21:00)</strong></td>
+                            <td>Nhóm gia đình tại nhà</td>
+                        </tr>
+                    </table>
+                </div>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    * Thứ 4 hàng tuần: Nhóm tối chung tại nhà thờ (18:30-20:00)
+                </p>
+            </section>
+
+            <!-- Câu Kinh Thánh khích lệ -->
+            <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 10px;">
+                <h3>"Mỗi người trong anh em hãy lấy ơn mình đã được mà giúp lẫn nhau, 
+                khác nào người quản lý trung tín giữ các thứ ơn của Đức Chúa Trời."</h3>
+                <p style="font-size: 1.1rem;">— 1 Phi-e-rơ 4:10</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hội Thánh Tin Lành Bethlehem</h4>
+                    <p>Số 123, Đường 3/2, Phường 1, TP. Mỹ Tho, Tiền Giang</p>
+                    <p>📞 (073) 1234 567</p>
+                    <p>✉️ info@bethlehemtiengiang.org</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Giờ Nhóm</h4>
+                    <p>Chủ Nhật: 8:00 - 10:00 (Sáng)</p>
+                    <p>Thứ Tư: 18:30 - 20:00 (Tối)</p>
+                    <p>Thứ Bảy: 19:00 - 21:00 (Thanh Niên)</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sermons.html">Bài Giảng</a></li>
+                        <li><a href="events.html">Sự Kiện</a></li>
+                        <li><a href="giving.html">Dâng Hiến</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Hội Thánh Tin Lành Bethlehem Tiền Giang. Mọi vinh hiển đều thuộc về Đức Chúa Trời.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('show');
+        });
+
+        // Auto-hide mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+
+        // Check for department parameter in URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const department = urlParams.get('highlight');
+            
+            if (department) {
+                const element = document.getElementById(department);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    element.style.boxShadow = '0 0 0 3px #ff0000';
+                    setTimeout(() => {
+                        element.style.boxShadow = '';
+                    }, 3000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

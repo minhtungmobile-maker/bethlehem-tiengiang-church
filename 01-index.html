@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hội Thánh Tin Lành Bethlehem Tiền Giang</title>
+    <meta name="description" content="Hội Thánh Tin Lành Bethlehem Tiền Giang - Rao truyền Phúc Âm, xây dựng môn đồ Chúa Giê-xu Christ.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+                        url('assets/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .upcoming-events {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .event-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .live-stream {
+            background: #ff0000;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .testimonials {
+            margin: 3rem 0;
+        }
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 1rem 0;
+            scrollbar-width: thin;
+        }
+        .testimonial-card {
+            min-width: 300px;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .quick-link {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .quick-link:hover {
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo Hội Thánh" class="logo-img">
+                <div class="logo-text">
+                    <h1>HỘI THÁNH TIN LÀNH</h1>
+                    <div class="church-name">BETHLEHEM</div>
+                    <div class="church-location">Tiền Giang, Việt Nam</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav class="main-nav">
+                <ul id="mainNav">
+                    <li><a href="index.html" class="active">🏠 Trang Chủ</a></li>
+                    <li><a href="about.html">📖 Giới Thiệu</a></li>
+                    <li><a href="ministries.html">👥 Ban Ngành</a></li>
+                    <li><a href="sermons.html">📚 Bài Giảng</a></li>
+                    <li><a href="news.html">📢 Tin Tức</a></li>
+                    <li><a href="giving.html">❤️ Dâng Hiến</a></li>
+                    <li><a href="contact.html">📞 Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Chào Mừng Đến Với Hội Thánh Bethlehem</h1>
+                <p>"Vì Đức Chúa Trời yêu thương thế gian, đến nỗi đã ban Con một của Ngài, 
+                hầu cho hễ ai tin Con ấy không bị hư mất mà được sự sống đời đời."</p>
+                <p style="font-style: italic; margin-bottom: 2rem;">— Giăng 3:16</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="about.html" class="btn">Tìm Hiểu Thêm</a>
+                    <a href="sermons.html" class="btn btn-secondary">Nghe Bài Giảng</a>
+                    <a href="contact.html" class="btn btn-accent">Tham Gia Nhóm</a>
+                </div>
+            </section>
+
+            <!-- Live Stream -->
+            <div class="live-stream">
+                <h2>🎥 LIVE STREAM CHỦ NHẬT</h2>
+                <p>Đang phát trực tiếp nhóm thờ phượng Chủ Nhật - Bắt đầu lúc 8:00</p>
+                <button onclick="openLiveStream()" style="background: white; color: #ff0000; border: none; padding: 0.8rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer; margin-top: 1rem;">
+                    XEM TRỰC TIẾP NGAY
+                </button>
+            </div>
+
+            <!-- Features -->
+            <section class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🙏</div>
+                    <h3>Thờ Phượng</h3>
+                    <p>Dâng lên Chúa sự thờ phượng chân thật trong tâm thần và lẽ thật.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Học Lời Chúa</h3>
+                    <p>Học hỏi và áp dụng Lời Chúa vào đời sống hàng ngày.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Tương Giao</h3>
+                    <p>Xây dựng mối quan hệ yêu thương trong cộng đồng đức tin.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Phục Vụ</h3>
+                    <p>Phục vụ Chúa và phục vụ người với tình yêu thương.</p>
+                </div>
+            </section>
+
+            <!-- Upcoming Events -->
+            <section class="upcoming-events">
+                <h2>📅 SỰ KIỆN SẮP TỚI</h2>
+                <div class="event-list">
+                    <div class="event-card">
+                        <h3>Đêm Giáng Sinh 2023</h3>
+                        <p><strong>Thời gian:</strong> 24/12/2023, 19:00</p>
+                        <p><strong>Địa điểm:</strong> Nhà thờ Bethlehem</p>
+                        <p>Chương trình đặc biệt với kịch, hát, và chia sẻ Lời Chúa.</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>Lễ Cầu Nguyện Tạ Ơn</h3>
+                        <p><strong>Thời gian:</strong> 31/12/2023, 20:00</p>
+                        <p><strong>Địa điểm:</strong> Nhà thờ Bethlehem</p>
+                        <p>Cùng nhau tạ ơn Chúa về một năm qua.</p>
+                    </div>
+                    <div class="event-card">
+                        <h3>Khai Giảng Khóa Kinh Thánh</h3>
+                        <p><strong>Thời gian:</strong> 15/01/2024, 18:30</p>
+                        <p><strong>Địa điểm:</strong> Phòng học tầng 2</p>
+                        <p>Dành cho tân tín hữu và người muốn tìm hiểu đức tin.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="news.html" class="btn">Xem Tất Cả Sự Kiện</a>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <a href="sermons.html" class="quick-link">📚 Bài Giảng Mới</a>
+                <a href="giving.html" class="quick-link">❤️ Dâng Hiến</a>
+                <a href="ministries.html" class="quick-link">👥 Tham Gia Ban Ngành</a>
+                <a href="contact.html" class="quick-link">📞 Liên Hệ Cầu Nguyện</a>
+            </div>
+
+            <!-- Testimonials -->
+            <section class="testimonials">
+                <h2 class="section-title">Lời Chứng</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-card">
+                        <p>"Tôi đã tìm được sự bình an thật sự trong Chúa khi đến với Hội Thánh Bethlehem. 
+                        Các anh chị em ở đây thật sự yêu thương và quan tâm lẫn nhau."</p>
+                        <p style="margin-top: 1rem; font-weight: bold;">— Anh Nguyễn Văn A</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Con tôi rất thích đi nhóm ở đây. Các cô giáo Trường Chúa Nhật dạy dỗ rất tận tình 
+                        và yêu thương trẻ em."</p>
+                        <p style="margin-top: 1rem; font-weight: bold;">— Chị Trần Thị B</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Lời Chúa được giảng dạy rõ ràng, dễ hiểu. Tôi học được nhiều điều quý giá 
+                        cho đời sống thuộc linh của mình."</p>
+                        <p style="margin-top: 1rem; font-weight: bold;">— Anh Lê Văn C</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Verse of the Day -->
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 10px; text-align: center; margin: 2rem 0;">
+                <h3>📖 CÂU GỐC HÔM NAY</h3>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">"Chúa là Đấng chăn giữ tôi: tôi sẽ chẳng thiếu thốn gì."</p>
+                <p style="font-style: italic;">— Thi-thiên 23:1</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hội Thánh Tin Lành Bethlehem</h4>
+                    <p>Số 123, Đường 3/2, Phường 1, TP. Mỹ Tho, Tiền Giang</p>
+                    <p>📞 (073) 1234 567</p>
+                    <p>✉️ info@bethlehemtiengiang.org</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Giờ Nhóm</h4>
+                    <p>Chủ Nhật: 8:00 - 10:00 (Sáng)</p>
+                    <p>Thứ Tư: 18:30 - 20:00 (Tối)</p>
+                    <p>Thứ Bảy: 19:00 - 21:00 (Thanh Niên)</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sermons.html">Bài Giảng</a></li>
+                        <li><a href="events.html">Sự Kiện</a></li>
+                        <li><a href="giving.html">Dâng Hiến</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="currentYear">2023</span> Hội Thánh Tin Lành Bethlehem Tiền Giang. Mọi vinh hiển đều thuộc về Đức Chúa Trời.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script>
+        function openLiveStream() {
+            window.open('https://youtube.com/@bethlehemtiengiang/live', '_blank');
+        }
+        
+        // Auto-scroll testimonials
+        const slider = document.querySelector('.testimonial-slider');
+        if (slider) {
+            let scrollAmount = 0;
+            setInterval(() => {
+                scrollAmount += 320;
+                if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+                    scrollAmount = 0;
+                }
+                slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

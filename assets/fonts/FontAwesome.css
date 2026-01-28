@@ -1,0 +1,265 @@
+/*!
+ * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2023 Fonticons, Inc.
+ */
+@font-face {
+    font-family: 'Font Awesome 6 Brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("./fa-brands-400.woff2") format("woff2"),
+         url("./fa-brands-400.woff") format("woff"),
+         url("./fa-brands-400.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url("./fa-regular-400.woff2") format("woff2"),
+         url("./fa-regular-400.woff") format("woff"),
+         url("./fa-regular-400.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("./fa-solid-900.woff2") format("woff2"),
+         url("./fa-solid-900.woff") format("woff"),
+         url("./fa-solid-900.ttf") format("truetype");
+}
+
+.fa {
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+}
+
+.fa,
+.fas,
+.fa-solid,
+.far,
+.fa-regular,
+.fab,
+.fa-brands {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+.fa-regular,
+.far {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+}
+
+.fa-solid,
+.fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.fa-brands,
+.fab {
+    font-family: "Font Awesome 6 Brands";
+}
+
+/* Icons used in the project */
+.fa-church:before { content: "\f51d"; }
+.fa-crown:before { content: "\f521"; }
+.fa-gem:before { content: "\f3a5"; }
+.fa-play-circle:before { content: "\f144"; }
+.fa-phone:before { content: "\f095"; }
+.fa-envelope:before { content: "\f0e0"; }
+.fa-map-marker-alt:before { content: "\f3c5"; }
+.fa-clock:before { content: "\f017"; }
+.fa-check:before { content: "\f00c"; }
+.fa-check-circle:before { content: "\f058"; }
+.fa-chevron-down:before { content: "\f078"; }
+.fa-chevron-up:before { content: "\f077"; }
+.fa-chevron-left:before { content: "\f053"; }
+.fa-chevron-right:before { content: "\f054"; }
+.fa-bars:before { content: "\f0c9"; }
+.fa-times:before { content: "\f00d"; }
+.fa-star:before { content: "\f005"; }
+.fa-users:before { content: "\f0c0"; }
+.fa-user-friends:before { content: "\f500"; }
+.fa-money-bill-wave:before { content: "\f53a"; }
+.fa-chart-line:before { content: "\f201"; }
+.fa-headset:before { content: "\f590"; }
+.fa-shield-alt:before { content: "\f3ed"; }
+.fa-calendar-star:before { content: "\f736"; }
+.fa-hands-helping:before { content: "\f4c4"; }
+.fa-quote-left:before { content: "\f10d"; }
+.fa-quote-right:before { content: "\f10e"; }
+.fa-paper-plane:before { content: "\f1d8"; }
+.fa-calendar-check:before { content: "\f274"; }
+.fa-book-open:before { content: "\f518"; }
+.fa-expand-alt:before { content: "\f424"; }
+.fa-award:before { content: "\f559"; }
+.fa-spinner:before { content: "\f110"; }
+.fa-exclamation-triangle:before { content: "\f071"; }
+.fa-search:before { content: "\f002"; }
+.fa-bell:before { content: "\f0f3"; }
+.fa-plus:before { content: "\f067"; }
+.fa-sign-out-alt:before { content: "\f2f5"; }
+.fa-eye:before { content: "\f06e"; }
+.fa-edit:before { content: "\f044"; }
+.fa-arrow-up:before { content: "\f062"; }
+.fa-arrow-down:before { content: "\f063"; }
+.fa-tachometer-alt:before { content: "\f3fd"; }
+.fa-box:before { content: "\f466"; }
+.fa-newspaper:before { content: "\f1ea"; }
+.fa-cog:before { content: "\f013"; }
+.fa-credit-card:before { content: "\f09d"; }
+.fa-user-plus:before { content: "\f234"; }
+.fa-bullhorn:before { content: "\f0a1"; }
+.fa-download:before { content: "\f019"; }
+.fa-images:before { content: "\f302"; }
+.fa-comment-dots:before { content: "\f4ad"; }
+.fa-facebook-f:before { content: "\f39e"; }
+.fa-youtube:before { content: "\f167"; }
+.fa-instagram:before { content: "\f16d"; }
+.fa-tiktok:before { content: "\e07b"; }
+.fa-cc-visa:before { content: "\f1f0"; }
+.fa-cc-mastercard:before { content: "\f1f1"; }
+.fa-cc-jcb:before { content: "\f24b"; }
+.fa-qrcode:before { content: "\f029"; }
+.fa-facebook-messenger:before { content: "\f39f"; }
+.fa-book-open-reader:before { content: "\f5da"; }
+.fa-hands-praying:before { content: "\f684"; }
+.fa-cross:before { content: "\f654"; }
+.fa-church:before { content: "\f51d"; }
+.fa-pray:before { content: "\f683"; }
+.fa-hands:before { content: "\f2a7"; }
+.fa-heart:before { content: "\f004"; }
+.fa-peace:before { content: "\f67c"; }
+.fa-dove:before { content: "\f4ba"; }
+.fa-bible:before { content: "\f647"; }
+.fa-praying-hands:before { content: "\f684"; }
+.fa-angel:before { content: "\f779"; }
+.fa-star-of-david:before { content: "\f69a"; }
+.fa-hamsa:before { content: "\f665"; }
+.fa-place-of-worship:before { content: "\f67f"; }
+.fa-vihara:before { content: "\f6a7"; }
+.fa-torah:before { content: "\f6a0"; }
+.fa-om:before { content: "\f679"; }
+.fa-khanda:before { content: "\f66d"; }
+.fa-yin-yang:before { content: "\f6ad"; }
+.fa-hanukiah:before { content: "\f6e6"; }
+.fa-menorah:before { content: "\f676"; }
+.fa-chart-bar:before { content: "\f080"; }
+.fa-filter:before { content: "\f0b0"; }
+.fa-ellipsis-v:before { content: "\f142"; }
+.fa-sync:before { content: "\f021"; }
+.fa-redo:before { content: "\f01e"; }
+.fa-undo:before { content: "\f0e2"; }
+.fa-save:before { content: "\f0c7"; }
+.fa-trash:before { content: "\f1f8"; }
+.fa-print:before { content: "\f02f"; }
+.fa-share:before { content: "\f064"; }
+.fa-link:before { content: "\f0c1"; }
+.fa-external-link-alt:before { content: "\f35d"; }
+.fa-copy:before { content: "\f0c5"; }
+.fa-paste:before { content: "\f0ea"; }
+.fa-cut:before { content: "\f0c4"; }
+.fa-file:before { content: "\f15b"; }
+.fa-file-alt:before { content: "\f15c"; }
+.fa-file-pdf:before { content: "\f1c1"; }
+.fa-file-word:before { content: "\f1c2"; }
+.fa-file-excel:before { content: "\f1c3"; }
+.fa-file-powerpoint:before { content: "\f1c4"; }
+.fa-file-image:before { content: "\f1c5"; }
+.fa-file-video:before { content: "\f1c8"; }
+.fa-file-audio:before { content: "\f1c7"; }
+.fa-file-archive:before { content: "\f1c6"; }
+.fa-file-code:before { content: "\f1c9"; }
+.fa-folder:before { content: "\f07b"; }
+.fa-folder-open:before { content: "\f07c"; }
+.fa-database:before { content: "\f1c0"; }
+.fa-server:before { content: "\f233"; }
+.fa-network-wired:before { content: "\f6ff"; }
+.fa-wifi:before { content: "\f1eb"; }
+.fa-bluetooth:before { content: "\f293"; }
+.fa-signal:before { content: "\f012"; }
+.fa-battery-full:before { content: "\f240"; }
+.fa-battery-half:before { content: "\f242"; }
+.fa-battery-quarter:before { content: "\f243"; }
+.fa-battery-empty:before { content: "\f244"; }
+.fa-plug:before { content: "\f1e6"; }
+.fa-power-off:before { content: "\f011"; }
+.fa-toggle-on:before { content: "\f205"; }
+.fa-toggle-off:before { content: "\f204"; }
+.fa-play:before { content: "\f04b"; }
+.fa-pause:before { content: "\f04c"; }
+.fa-stop:before { content: "\f04d"; }
+.fa-forward:before { content: "\f04e"; }
+.fa-backward:before { content: "\f04a"; }
+.fa-step-forward:before { content: "\f051"; }
+.fa-step-backward:before { content: "\f048"; }
+.fa-fast-forward:before { content: "\f050"; }
+.fa-fast-backward:before { content: "\f049"; }
+.fa-volume-up:before { content: "\f028"; }
+.fa-volume-down:before { content: "\f027"; }
+.fa-volume-off:before { content: "\f026"; }
+.fa-volume-mute:before { content: "\f6a9"; }
+.fa-music:before { content: "\f001"; }
+.fa-film:before { content: "\f008"; }
+.fa-camera:before { content: "\f030"; }
+.fa-camera-retro:before { content: "\f083"; }
+.fa-video:before { content: "\f03d"; }
+.fa-microphone:before { content: "\f130"; }
+.fa-microphone-alt:before { content: "\f3c9"; }
+.fa-microphone-alt-slash:before { content: "\f539"; }
+.fa-microphone-slash:before { content: "\f131"; }
+.fa-rss:before { content: "\f09e"; }
+.fa-rss-square:before { content: "\f143"; }
+.fa-podcast:before { content: "\f2ce"; }
+.fa-shuffle:before { content: "\f074"; }
+.fa-random:before { content: "\f074"; }
+.fa-sort:before { content: "\f0dc"; }
+.fa-sort-up:before { content: "\f0de"; }
+.fa-sort-down:before { content: "\f0dd"; }
+.fa-sort-alpha-up:before { content: "\f15e"; }
+.fa-sort-alpha-down:before { content: "\f15d"; }
+.fa-sort-numeric-up:before { content: "\f162"; }
+.fa-sort-numeric-down:before { content: "\f161"; }
+.fa-sort-amount-up:before { content: "\f160"; }
+.fa-sort-amount-down:before { content: "\f161"; }
+.fa-thumbs-up:before { content: "\f164"; }
+.fa-thumbs-down:before { content: "\f165"; }
+.fa-heartbeat:before { content: "\f21e"; }
+.fa-running:before { content: "\f70c"; }
+.fa-walking:before { content: "\f554"; }
+.fa-biking:before { content: "\f84a"; }
+.fa-swimmer:before { content: "\f5c4"; }
+.fa-dumbbell:before { content: "\f44b"; }
+.fa-fire:before { content: "\f06d"; }
+.fa-leaf:before { content: "\f06c"; }
+.fa-seedling:before { content: "\f4d8"; }
+.fa-tree:before { content: "\f1bb"; }
+.fa-mountain:before { content: "\f6fc"; }
+.fa-umbrella:before { content: "\f0e9"; }
+.fa-sun:before { content: "\f185"; }
+.fa-moon:before { content: "\f186"; }
+.fa-cloud:before { content: "\f0c2"; }
+.fa-cloud-sun:before { content: "\f6c4"; }
+.fa-cloud-moon:before { content: "\f6c3"; }
+.fa-cloud-rain:before { content: "\f73d"; }
+.fa-snowflake:before { content: "\f2dc"; }
+.fa-wind:before { content: "\f72e"; }
+.fa-water:before { content: "\f773"; }
+.fa-tint:before { content: "\f043"; }
+.fa-temperature-high:before { content: "\f769"; }
+.fa-temperature-low:before { content: "\f76b"; }
+.fa-thermometer-half:before { content: "\f2c9"; }
+.fa-thermometer-quarter:before { content: "\f2ca"; }
+.fa-thermometer-empty:before { content: "\f2cb"; }
+.fa-thermometer-full:before { content: "\f2c7"; }

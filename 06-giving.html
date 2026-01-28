@@ -1,0 +1,891 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dâng Hiến - Hội Thánh Tin Lành Bethlehem Tiền Giang</title>
+    <meta name="description" content="Hướng dẫn dâng hiến theo nguyên tắc Kinh Thánh: tự nguyện, vui lòng, với tấm lòng biết ơn Chúa. Thông tin chuyển khoản, các cách dâng hiến khác.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .bible-verse { 
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white; 
+            padding: 2rem; 
+            border-radius: 10px; 
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .giving-principles { margin: 2rem 0; }
+        .principle-card { 
+            background: white; 
+            padding: 1.5rem; 
+            border-radius: 8px; 
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .bank-details { 
+            background: #f8f9fa; 
+            padding: 1.5rem; 
+            border-radius: 8px; 
+            border: 1px dashed #ccc;
+            margin: 1rem 0;
+        }
+        .bank-row { display: flex; margin-bottom: 0.5rem; flex-wrap: wrap; }
+        .bank-label { width: 150px; font-weight: bold; }
+        .bank-value { flex: 1; }
+        .copy-btn { 
+            background: var(--primary-color); 
+            color: white; 
+            border: none; 
+            padding: 0.3rem 0.8rem; 
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: background 0.3s ease;
+        }
+        .copy-btn:hover {
+            background: var(--accent-color);
+        }
+        .giving-methods { margin: 2rem 0; }
+        .method { 
+            background: white; 
+            padding: 1.5rem; 
+            border-radius: 8px; 
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .faq-item { 
+            margin-bottom: 1rem; 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 1rem;
+        }
+        .faq-question { 
+            background: none; 
+            border: none; 
+            text-align: left; 
+            width: 100%; 
+            padding: 1rem 0;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        .faq-answer { 
+            padding: 0 0 1rem 0; 
+            display: none;
+        }
+        .faq-answer.active { display: block; }
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .giving-calculator {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        .calculator-input {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        .calculator-input input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            width: 200px;
+        }
+        .calculator-results {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+        .calculator-results.active {
+            display: block;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        .qrcode-container {
+            text-align: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        .qrcode {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-radius: 5px;
+        }
+        .testimony-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .testimony-slider {
+            margin-top: 1.5rem;
+        }
+        .testimony-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid white;
+        }
+        .receipt-request {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid #ffeaa7;
+        }
+        .giving-purpose {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 2px solid var(--border-color);
+        }
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .purpose-item {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo Hội Thánh" class="logo-img">
+                <div class="logo-text">
+                    <h1>HỘI THÁNH TIN LÀNH</h1>
+                    <div class="church-name">BETHLEHEM</div>
+                    <div class="church-location">Tiền Giang, Việt Nam</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav class="main-nav">
+                <ul id="mainNav">
+                    <li><a href="index.html">🏠 Trang Chủ</a></li>
+                    <li><a href="about.html">📖 Giới Thiệu</a></li>
+                    <li><a href="ministries.html">👥 Ban Ngành</a></li>
+                    <li><a href="sermons.html">📚 Bài Giảng</a></li>
+                    <li><a href="news.html">📢 Tin Tức</a></li>
+                    <li><a href="giving.html" class="active">❤️ Dâng Hiến</a></li>
+                    <li><a href="contact.html">📞 Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title">Dâng Hiến Theo Lời Chúa</h1>
+            
+            <!-- Câu Kinh Thánh chủ đạo -->
+            <div class="bible-verse">
+                <h2 style="color: white; margin-bottom: 1rem; font-size: 1.5rem;">"Mỗi người hãy tùy theo lòng mình đã định mà dâng hiến, 
+                không phải tiếc rẻ hay vì ép uổng; vì Đức Chúa Trời yêu kẻ dâng hiến cách vui lòng."</h2>
+                <p style="font-size: 1.2rem;">— 2 Cô-rinh-tô 9:7</p>
+            </div>
+
+            <!-- Giới thiệu -->
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                    Dâng hiến là hành động thờ phượng, thể hiện lòng biết ơn và tín thác nơi Chúa. 
+                    Khi chúng ta dâng hiến cách vui lòng, chúng ta kinh nghiệm phước hạnh và sự chu cấp dư dật của Chúa.
+                </p>
+            </div>
+
+            <!-- Nguyên tắc dâng hiến -->
+            <section class="giving-principles">
+                <h2>📖 Nguyên Tắc Dâng Hiến Theo Kinh Thánh</h2>
+                <div class="principle-card">
+                    <h3>1. Tự Nguyện</h3>
+                    <p>Dâng hiến xuất phát từ tấm lòng tự nguyện, không bị ép buộc hay cưỡng bách. 
+                    "Mỗi người hãy tùy theo lòng mình đã định mà dâng hiến..." (2 Cô-rinh-tô 9:7). 
+                    Đây là hành động tự do của ý chí, xuất phát từ tình yêu đối với Chúa.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>2. Vui Lòng</h3>
+                    <p>Đức Chúa Trời yêu kẻ dâng hiến cách vui lòng, không miễn cưỡng. 
+                    Dâng hiến với thái độ hân hoan, biết ơn vì mọi sự đều do Chúa ban. 
+                    "Hãy cho, thì sẽ được cho lại" (Lu-ca 6:38).</p>
+                </div>
+                <div class="principle-card">
+                    <h3>3. Đều Đặn & Có Kế Hoạch</h3>
+                    <p>"Cứ đầu tuần lễ, mỗi người trong anh em khá tùy sức mình chắt lót được bao nhiêu thì để dành..." 
+                    (1 Cô-rinh-tô 16:2). Dâng hiến có kế hoạch, không tùy hứng, thể hiện sự ưu tiên cho Nước Đức Chúa Trời.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>4. Theo Khả Năng</h3>
+                    <p>"Vì nếu người nào sẵn lòng cho, thì sẽ được đẹp lòng Đức Chúa Trời, 
+                    theo như mình có, chớ không phải theo như mình không có." (2 Cô-rinh-tô 8:12). 
+                    Chúa đo lường theo tỷ lệ, không theo số lượng.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>5. Kín Đáo & Khiêm Nhường</h3>
+                    <p>"Song khi ngươi làm việc bố thí, đừng cho tay tả biết tay hữu làm việc gì..." 
+                    (Ma-thi-ơ 6:3-4). Dâng hiến là giữa bạn với Chúa, không cần phô trương.</p>
+                </div>
+            </section>
+
+            <!-- Máy tính dâng hiến -->
+            <section class="giving-calculator">
+                <h2>🧮 Máy Tính Dâng Hiến</h2>
+                <p>Tính toán số tiền dâng hiến theo thu nhập của bạn:</p>
+                
+                <div class="calculator-input">
+                    <label for="income">Thu nhập tháng của bạn (VNĐ):</label>
+                    <input type="number" id="income" placeholder="Ví dụ: 10,000,000" min="0">
+                    <button onclick="calculateGiving()" style="background: var(--primary-color); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 5px; cursor: pointer;">
+                        Tính Toán
+                    </button>
+                </div>
+                
+                <div class="calculator-results" id="calculatorResults">
+                    <h3>Kết Quả Tính Toán:</h3>
+                    <div class="result-item">
+                        <span>Thu nhập tháng:</span>
+                        <span id="resultIncome">0 đ</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Dâng một phần mười (10%):</span>
+                        <span id="resultTithe">0 đ</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Dâng hiến tự nguyện (5%):</span>
+                        <span id="resultOffering">0 đ</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Tổng dâng hiến đề xuất:</span>
+                        <span id="resultTotal">0 đ</span>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    <em>* Đây chỉ là gợi ý dựa trên nguyên tắc Kinh Thánh. Bạn có thể dâng hiến theo sự hướng dẫn của Chúa và khả năng của mình.</em>
+                </p>
+            </section>
+
+            <!-- Thông tin tài khoản -->
+            <section class="bank-info">
+                <h2>🏦 Thông Tin Chuyển Khoản</h2>
+                <div class="bank-details">
+                    <div class="bank-row">
+                        <div class="bank-label">Chủ tài khoản:</div>
+                        <div class="bank-value">
+                            <span>HỘI THÁNH TIN LÀNH BETHLEHEM TIỀN GIANG</span>
+                        </div>
+                    </div>
+                    <div class="bank-row">
+                        <div class="bank-label">Số tài khoản:</div>
+                        <div class="bank-value">
+                            <span id="accountNumber">0123 4567 8901</span>
+                            <button class="copy-btn" onclick="copyToClipboard('accountNumber', 'Số tài khoản')">📋 Copy</button>
+                        </div>
+                    </div>
+                    <div class="bank-row">
+                        <div class="bank-label">Ngân hàng:</div>
+                        <div class="bank-value">Ngân hàng TMCP Á Châu (ACB) - Chi nhánh Mỹ Tho</div>
+                    </div>
+                    <div class="bank-row">
+                        <div class="bank-label">Nội dung chuyển:</div>
+                        <div class="bank-value">
+                            <code>DANGHINEN [Họ tên của bạn] [Mục đích (nếu có)]</code>
+                            <button class="copy-btn" onclick="copyToClipboard('transferContent', 'Nội dung chuyển khoản')">📋 Copy</button>
+                            <span id="transferContent" style="display:none;">DANGHINEN</span>
+                        </div>
+                    </div>
+                    <div class="bank-row">
+                        <div class="bank-label">QR Code:</div>
+                        <div class="bank-value">
+                            <div class="qrcode-container">
+                                <div class="qrcode">
+                                    🏦
+                                </div>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Quét mã QR để chuyển khoản nhanh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p><small><em>Ví dụ: <code>DANGHINEN NGUYEN VAN A TRUYENGIAO</code> (cho mục đích truyền giáo)</em></small></p>
+            </section>
+
+            <!-- Mục đích dâng hiến -->
+            <section class="giving-purpose">
+                <h3>🎯 Mục Đích Dâng Hiến</h3>
+                <p>Bạn có thể chỉ định mục đích dâng hiến trong nội dung chuyển khoản:</p>
+                
+                <div class="purpose-grid">
+                    <div class="purpose-item">
+                        <h4>TRUYENGIAO</h4>
+                        <p>Cho công tác truyền giáo địa phương và toàn cầu</p>
+                    </div>
+                    <div class="purpose-item">
+                        <h4>TUTHIEN</h4>
+                        <p>Cho chương trình từ thiện, giúp đỡ người nghèo</p>
+                    </div>
+                    <div class="purpose-item">
+                        <h4>XAYDUNG</h4>
+                        <p>Cho quỹ xây dựng/cải tạo nhà thờ</p>
+                    </div>
+                    <div class="purpose-item">
+                        <h4>THANHNIEN</h4>
+                        <p>Cho công tác thanh niên và thiếu nhi</p>
+                    </div>
+                    <div class="purpose-item">
+                        <h4>MUCVU</h4>
+                        <p>Hỗ trợ mục vụ và mục sư</p>
+                    </div>
+                    <div class="purpose-item">
+                        <h4>CHUNG</h4>
+                        <p>Dâng hiến chung cho mọi công việc Chúa</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Các cách dâng hiến khác -->
+            <section class="giving-methods">
+                <h2>🔄 Các Cách Dâng Hiến Khác</h2>
+                
+                <div class="method">
+                    <h3>💰 Dâng Hiến Trực Tiếp</h3>
+                    <p>Trong các buổi nhóm Chủ Nhật và Thứ Tư, bạn có thể dâng hiến trực tiếp qua túi dâng hiến.</p>
+                    <p><strong>Ưu điểm:</strong> Đơn giản, trực tiếp, có thể kèm lời cầu nguyện và thư dâng hiến.</p>
+                    <p><strong>Thời gian:</strong> Trong phần dâng hiến của buổi nhóm</p>
+                </div>
+                
+                <div class="method">
+                    <h3>🎁 Dâng Hiến Hiện Vật</h3>
+                    <p>Ngoài tài chính, bạn có thể dâng hiến bằng hiện vật cho các chương trình từ thiện:</p>
+                    <ul>
+                        <li>Lương thực, thực phẩm (cho người nghèo, người già neo đơn)</li>
+                        <li>Quần áo, chăn mền (cho mùa đông, vùng lũ lụt)</li>
+                        <li>Sách vở, đồ dùng học tập (cho trẻ em vùng khó khăn)</li>
+                        <li>Thuốc men, vật tư y tế (cho bệnh nhân nghèo)</li>
+                    </ul>
+                    <p><em>Liên hệ Ban Truyền Giáo (0909 555 666) để biết thêm chi tiết và nhu cầu hiện tại.</em></p>
+                </div>
+                
+                <div class="method">
+                    <h3>💳 Dâng Hiến Qua Ví Điện Tử</h3>
+                    <p>Tiện lợi, nhanh chóng qua các ứng dụng phổ biến:</p>
+                    <ul>
+                        <li><strong>Momo:</strong> 0909 123 456 (Quét mã QR bên dưới)</li>
+                        <li><strong>ZaloPay:</strong> 0909 123 456</li>
+                        <li><strong>VNPay:</strong> Quét mã tại bàn thông tin</li>
+                        <li><strong>ShopeePay:</strong> 0909 123 456</li>
+                    </ul>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin: 1rem 0;">
+                        <div class="qrcode-container" style="flex: 0 0 auto;">
+                            <div class="qrcode">💰</div>
+                            <p><small>Momo QR Code</small></p>
+                        </div>
+                        <div class="qrcode-container" style="flex: 0 0 auto;">
+                            <div class="qrcode">💙</div>
+                            <p><small>ZaloPay QR Code</small></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="method">
+                    <h3>💎 Dâng Hiến Bằng Vàng</h3>
+                    <p>Đối với những khoản dâng hiến lớn hoặc đặc biệt, bạn có thể dâng hiến bằng vàng:</p>
+                    <ul>
+                        <li>Vàng miếng SJC (các loại 1 chỉ, 2 chỉ, 5 chỉ, 1 lượng)</li>
+                        <li>Trang sức vàng (nhẫn, dây chuyền, vòng tay)</li>
+                        <li>Liên hệ trước với Ban Tài Chính để được hướng dẫn cụ thể</li>
+                    </ul>
+                    <p><em>Ưu điểm: Bảo toàn giá trị, có thể sử dụng cho các dự án lớn.</em></p>
+                </div>
+                
+                <div class="method">
+                    <h3>🏠 Dâng Hiến Bằng Tài Sản</h3>
+                    <p>Đối với các tài sản lớn như đất đai, nhà cửa, xe cộ:</p>
+                    <ul>
+                        <li>Liên hệ trực tiếp với Mục sư Quản nhiệm (0909 111 222)</li>
+                        <li>Cần có giấy tờ pháp lý đầy đủ</li>
+                        <li>Sẽ được sử dụng cho các dự án phát triển lâu dài của Hội Thánh</li>
+                        <li>Có biên lai và giấy tờ chuyển nhượng hợp pháp</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Yêu cầu biên lai -->
+            <section class="receipt-request">
+                <h3>🧾 Yêu Cầu Biên Lai Dâng Hiến</h3>
+                <p>Đối với các khoản dâng hiến có nhu cầu nhận biên lai (để khai thuế, báo cáo,...), vui lòng:</p>
+                <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Điền đầy đủ thông tin cá nhân khi dâng hiến</li>
+                    <li>Ghi rõ mục đích dâng hiến</li>
+                    <li>Liên hệ Ban Tài Chính: <strong>0909 333 444</strong> hoặc email: <strong>taichinh@bethlehemtiengiang.org</strong></li>
+                    <li>Biên lai sẽ được gửi qua email hoặc trao tận tay trong vòng 7 ngày làm việc</li>
+                </ol>
+                <p><em>Biên lai có giá trị cho mục đích khai thuế thu nhập cá nhân theo quy định pháp luật.</em></p>
+            </section>
+
+            <!-- Câu hỏi thường gặp -->
+            <section class="giving-faq">
+                <h2>❓ Câu Hỏi Thường Gặp Về Dâng Hiến</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(1)">
+                        <span>Dâng hiến có bắt buộc không?</span>
+                        <span class="faq-icon" id="faqIcon1">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer1">
+                        <p><strong>Không.</strong> Dâng hiến là hành động tự nguyện xuất phát từ tấm lòng biết ơn và yêu mến Chúa. 
+                        Chúa yêu kẻ dâng hiến cách vui lòng, không miễn cưỡng (2 Cô-rinh-tô 9:7). 
+                        Tuy nhiên, Kinh Thánh dạy chúng ta nên dâng hiến đều đặn như một phần của sự thờ phượng.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(2)">
+                        <span>Tôi nên dâng hiến bao nhiêu?</span>
+                        <span class="faq-icon" id="faqIcon2">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer2">
+                        <p>Kinh Thánh không quy định số tiền cụ thể. Nguyên tắc là:</p>
+                        <ul>
+                            <li><strong>Theo khả năng:</strong> "Theo như mình có, chớ không phải theo như mình không có" (2 Cô-rinh-tô 8:12)</li>
+                            <li><strong>Theo lòng đã định:</strong> "Mỗi người hãy tùy theo lòng mình đã định" (2 Cô-rinh-tô 9:7)</li>
+                            <li><strong>Có thể tham khảo mức dâng một phần mười (10%):</strong> Đây là mức cơ bản trong Cựu Ước (Ma-la-chi 3:10)</li>
+                            <li><strong>Dâng hiến tự nguyện:</strong> Ngoài một phần mười, có thể dâng thêm theo sự thúc giục của Chúa</li>
+                        </ul>
+                        <p>Quan trọng nhất là <strong>thái độ của tấm lòng</strong>, không phải số tiền.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(3)">
+                        <span>Tiền dâng hiến được sử dụng thế nào?</span>
+                        <span class="faq-icon" id="faqIcon3">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer3">
+                        <p>Toàn bộ số tiền dâng hiến được sử dụng minh bạch cho các mục đích:</p>
+                        <ul>
+                            <li><strong>Duy trì và phát triển công việc Chúa tại địa phương (50%):</strong> Chi phí điện, nước, internet, vệ sinh, bảo trì nhà thờ</li>
+                            <li><strong>Hỗ trợ mục sư và truyền đạo (25%):</strong> Lương, phụ cấp, bảo hiểm cho người phục vụ toàn thời gian</li>
+                            <li><strong>Các chương trình truyền giáo (15%):</strong> In ấn tài liệu, tổ chức các chiến dịch truyền giáo, hỗ trợ điểm nhóm mới</li>
+                            <li><strong>Từ thiện xã hội (10%):</strong> Giúp đỡ người nghèo, người già neo đơn, trẻ em khó khăn, cứu trợ thiên tai</li>
+                        </ul>
+                        <p>Báo cáo tài chính được công khai định kỳ trong các buổi nhóm hội đồng và đăng trên bảng thông báo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(4)">
+                        <span>Tôi có nhận được biên lai không?</span>
+                        <span class="faq-icon" id="faqIcon4">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer4">
+                        <p><strong>Có.</strong> Đối với các khoản dâng hiến có thông tin rõ ràng (chuyển khoản, dâng hiến có ghi tên), 
+                        Hội Thánh sẽ cung cấp biên lai khi có yêu cầu.</p>
+                        <ul>
+                            <li><strong>Biên lai điện tử:</strong> Gửi qua email trong vòng 7 ngày làm việc</li>
+                            <li><strong>Biên lai giấy:</strong> Nhận trực tiếp tại văn phòng Hội Thánh</li>
+                            <li><strong>Giá trị:</strong> Biên lai có giá trị cho mục đích khai thuế thu nhập cá nhân</li>
+                            <li><strong>Liên hệ:</strong> Ban Tài Chính - 0909 333 444 hoặc taichinh@bethlehemtiengiang.org</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(5)">
+                        <span>Tôi có thể dâng hiến cho mục đích cụ thể không?</span>
+                        <span class="faq-icon" id="faqIcon5">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer5">
+                        <p><strong>Được.</strong> Bạn có thể chỉ định mục đích dâng hiến trong nội dung chuyển khoản:</p>
+                        <ul>
+                            <li><code>TRUYENGIAO</code> - Cho công tác truyền giáo</li>
+                            <li><code>TUTHIEN</code> - Cho chương trình từ thiện</li>
+                            <li><code>XAYDUNG</code> - Cho quỹ xây dựng/cải tạo</li>
+                            <li><code>THANHNIEN</code> - Cho công tác thanh niên</li>
+                            <li><code>THIEUNHI</code> - Cho công tác thiếu nhi</li>
+                            <li><code>MUCVU</code> - Hỗ trợ mục vụ</li>
+                            <li><code>CHUNG</code> - Dâng hiến chung (mặc định)</li>
+                        </ul>
+                        <p>Nếu không chỉ định, sẽ được xem là dâng hiến chung cho mọi công việc Chúa. 
+                        Số tiền được phân bổ theo ngân sách đã được Hội đồng chấp thuận.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(6)">
+                        <span>Người nước ngoài có thể dâng hiến không?</span>
+                        <span class="faq-icon" id="faqIcon6">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer6">
+                        <p><strong>Có.</strong> Người nước ngoài có thể dâng hiến thông qua các cách sau:</p>
+                        <ul>
+                            <li><strong>Chuyển khoản quốc tế:</strong> Liên hệ Ban Tài Chính để nhận thông tin tài khoản USD</li>
+                            <li><strong>PayPal:</strong> paypal.me/bethlehemtiengiang</li>
+                            <li><strong>Western Union/MoneyGram:</strong> Liên hệ để nhận thông tin người nhận</li>
+                            <li><strong>Tiền mặt khi tham dự:</strong> Dâng hiến trực tiếp trong buổi nhóm</li>
+                        </ul>
+                        <p><em>Lưu ý: Các khoản dâng hiến từ nước ngoài có thể chịu phí chuyển đổi và phí ngân hàng.</em></p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(7)">
+                        <span>Tôi dâng hiến nhưng muốn ẩn danh?</span>
+                        <span class="faq-icon" id="faqIcon7">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqAnswer7">
+                        <p><strong>Được.</strong> Bạn có thể dâng hiến ẩn danh bằng các cách:</p>
+                        <ul>
+                            <li>Dâng hiến tiền mặt không ghi tên trong túi dâng hiến</li>
+                            <li>Chuyển khoản từ tài khoản ẩn danh (tài khoản không có tên rõ ràng)</li>
+                            <li>Nhờ người khác dâng hiến thay</li>
+                        </ul>
+                        <p>Tuy nhiên, nếu dâng hiến ẩn danh, bạn sẽ không nhận được biên lai và không được ghi nhận trong sổ sách. 
+                        "Song khi ngươi làm việc bố thí, đừng cho tay tả biết tay hữu làm việc gì" (Ma-thi-ơ 6:3).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lời chứng về dâng hiến -->
+            <section class="testimony-section">
+                <h2 style="color: white;">🙏 Lời Chứng Về Phước Hạnh Dâng Hiến</h2>
+                <div class="testimony-slider">
+                    <div class="testimony-item">
+                        <p>"Khi tôi bắt đầu trung tín dâng một phần mười, Chúa đã mở cửa sổ trên trời đổ phước xuống cho tôi. 
+                        Công việc làm ăn thuận lợi hơn, gia đình bình an, và tôi kinh nghiệm sự chu cấp kỳ diệu của Chúa."</p>
+                        <p style="text-align: right; margin-top: 0.5rem; font-style: italic;">— Anh Nguyễn Văn Tài</p>
+                    </div>
+                    <div class="testimony-item">
+                        <p>"Tôi là sinh viên, thu nhập rất ít nhưng vẫn dâng hiến đều đặn. Chúa không chỉ chu cấp đầy đủ 
+                        mà còn dư dật. Tôi luôn có đủ tiền học phí và sinh hoạt phí một cách kỳ diệu."</p>
+                        <p style="text-align: right; margin-top: 0.5rem; font-style: italic;">— Chị Trần Thị Thu</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lời nhắn nhủ từ Kinh Thánh -->
+            <div class="bible-verse" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-top: 2rem;">
+                <h3 style="color: white;">"Hãy nhớ lại lời chúc phước của Chúa Giê-xu: 
+                'Ban cho thì có phước hơn nhận lãnh.'"</h3>
+                <p style="font-size: 1.1rem;">— Công vụ 20:35</p>
+            </div>
+
+            <!-- Liên hệ hỗ trợ -->
+            <section style="text-align: center; margin: 3rem 0; padding: 2rem; background-color: #f8f9fa; border-radius: 10px;">
+                <h3>🤝 Cần Hỗ Trợ Thêm?</h3>
+                <p>Nếu bạn có thắc mắc hoặc cần hỗ trợ về việc dâng hiến, đừng ngần ngại liên hệ:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div>
+                        <h4>📞 Ban Tài Chính</h4>
+                        <p>Trưởng lão Huỳnh Thanh Bình</p>
+                        <p><strong>Điện thoại:</strong> 0909 333 444</p>
+                        <p><strong>Giờ làm việc:</strong> T2-T6: 8:00-11:30, 14:00-17:00</p>
+                    </div>
+                    <div>
+                        <h4>✉️ Email Liên Hệ</h4>
+                        <p><strong>Tài chính:</strong> taichinh@bethlehemtiengiang.org</p>
+                        <p><strong>Truyền giáo:</strong> truyengiao@bethlehemtiengiang.org</p>
+                        <p><strong>Từ thiện:</strong> tuthien@bethlehemtiengiang.org</p>
+                    </div>
+                    <div>
+                        <h4>🏢 Văn Phòng Hội Thánh</h4>
+                        <p>Số 123, Đường 3/2, Phường 1</p>
+                        <p>TP. Mỹ Tho, Tiền Giang</p>
+                        <p><strong>Điện thoại:</strong> (073) 1234 567</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 1.5rem; font-style: italic;">
+                    <em>Chúng tôi sẵn sàng giải đáp mọi thắc mắc của bạn. 
+                    "Hãy đến gần Đức Chúa Trời, thì Ngài sẽ đến gần anh em." (Gia-cơ 4:8)</em>
+                </p>
+            </section>
+
+            <!-- Câu Kinh Thánh cuối trang -->
+            <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border-radius: 10px;">
+                <h3>"Hãy thử ta trong việc nầy, Đức Giê-hô-va vạn quân phán, 
+                xem ta có mở các cửa sổ trên trời cho các ngươi, 
+                đổ phước xuống cho các ngươi đến nỗi không chỗ chứa chăng!"</h3>
+                <p style="font-size: 1.1rem;">— Ma-la-chi 3:10</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hội Thánh Tin Lành Bethlehem</h4>
+                    <p>Số 123, Đường 3/2, Phường 1, TP. Mỹ Tho, Tiền Giang</p>
+                    <p>📞 (073) 1234 567</p>
+                    <p>✉️ info@bethlehemtiengiang.org</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Giờ Nhóm</h4>
+                    <p>Chủ Nhật: 8:00 - 10:00 (Sáng)</p>
+                    <p>Thứ Tư: 18:30 - 20:00 (Tối)</p>
+                    <p>Thứ Bảy: 19:00 - 21:00 (Thanh Niên)</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sermons.html">Bài Giảng Mới</a></li>
+                        <li><a href="news.html">Sự Kiện</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Hội Thánh Tin Lành Bethlehem Tiền Giang. Mọi vinh hiển đều thuộc về Đức Chúa Trời.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="privacy.html" style="color: white; margin: 0 0.5rem;">Chính Sách Bảo Mật</a> |
+                    <a href="terms.html" style="color: white; margin: 0 0.5rem;">Điều Khoản Sử Dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('show');
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(id) {
+            const answer = document.getElementById(`faqAnswer${id}`);
+            const icon = document.getElementById(`faqIcon${id}`);
+            
+            // Toggle current answer
+            answer.classList.toggle('active');
+            icon.textContent = answer.classList.contains('active') ? '−' : '+';
+            
+            // Close other answers (optional)
+            // Uncomment if you want only one FAQ open at a time
+            /*
+            for (let i = 1; i <= 7; i++) {
+                if (i !== id) {
+                    const otherAnswer = document.getElementById(`faqAnswer${i}`);
+                    const otherIcon = document.getElementById(`faqIcon${i}`);
+                    otherAnswer.classList.remove('active');
+                    otherIcon.textContent = '+';
+                }
+            }
+            */
+        }
+
+        // Initialize all FAQ items
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-hide mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const nav = document.getElementById('mainNav');
+                const menuBtn = document.getElementById('mobileMenuBtn');
+                
+                if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                    nav.classList.remove('show');
+                }
+            });
+
+            // Set up FAQ event listeners
+            for (let i = 1; i <= 7; i++) {
+                const question = document.querySelector(`.faq-question[onclick="toggleFAQ(${i})"]`);
+                if (question) {
+                    question.addEventListener('click', function() {
+                        toggleFAQ(i);
+                    });
+                }
+            }
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard(elementId, label) {
+            const element = document.getElementById(elementId);
+            let textToCopy = element.textContent || element.innerText;
+            
+            // Remove extra spaces from account number
+            if (elementId === 'accountNumber') {
+                textToCopy = textToCopy.replace(/\s/g, '');
+            }
+            
+            // Create temporary input element
+            const tempInput = document.createElement('input');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                // Try using the modern clipboard API
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showCopySuccess(event.target, label);
+                }).catch(err => {
+                    // Fallback for older browsers
+                    document.execCommand('copy');
+                    showCopySuccess(event.target, label);
+                });
+            } catch (err) {
+                // Final fallback
+                document.execCommand('copy');
+                showCopySuccess(event.target, label);
+            }
+            
+            // Clean up
+            document.body.removeChild(tempInput);
+        }
+
+        function showCopySuccess(button, label) {
+            const originalText = button.textContent;
+            const originalBackground = button.style.background;
+            
+            button.textContent = '✅ Đã copy!';
+            button.style.background = '#28a745';
+            button.style.cursor = 'default';
+            
+            // Optional: Show notification
+            showNotification(`Đã sao chép ${label} vào clipboard!`, 'success');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = originalBackground;
+                button.style.cursor = 'pointer';
+            }, 2000);
+        }
+
+        // Notification function
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                background: ${type === 'success' ? '#28a745' : '#dc3545'};
+                color: white;
+                border-radius: 5px;
+                z-index: 9999;
+                animation: slideIn 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Giving calculator function
+        function calculateGiving() {
+            const incomeInput = document.getElementById('income');
+            const income = parseFloat(incomeInput.value.replace(/,/g, ''));
+            
+            if (isNaN(income) || income <= 0) {
+                alert('Vui lòng nhập thu nhập hợp lệ (số dương)');
+                incomeInput.focus();
+                return;
+            }
+            
+            // Calculate amounts
+            const tithe = income * 0.1; // 10%
+            const offering = income * 0.05; // 5%
+            const total = tithe + offering;
+            
+            // Format numbers with commas
+            const formatNumber = (num) => {
+                return num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' đ';
+            };
+            
+            // Update results
+            document.getElementById('resultIncome').textContent = formatNumber(income);
+            document.getElementById('resultTithe').textContent = formatNumber(tithe);
+            document.getElementById('resultOffering').textContent = formatNumber(offering);
+            document.getElementById('resultTotal').textContent = formatNumber(total);
+            
+            // Show results
+            document.getElementById('calculatorResults').classList.add('active');
+            
+            // Optional: Scroll to results
+            document.getElementById('calculatorResults').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        // Format income input with commas
+        document.getElementById('income')?.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value) {
+                value = parseInt(value, 10).toLocaleString('vi-VN');
+            }
+            e.target.value = value;
+        });
+
+        // Keyboard support for calculator
+        document.getElementById('income')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculateGiving();
+            }
+        });
+    </script>
+</body>
+</html>

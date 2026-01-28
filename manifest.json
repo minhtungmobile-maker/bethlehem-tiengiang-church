@@ -1,0 +1,214 @@
+﻿{
+  "name": "Hội Thánh Tin Lành Bethlehem Tiền Giang",
+  "short_name": "Hội Thánh Bethlehem",
+  "description": "Website chính thức Hội Thánh Tin Lành Bethlehem Tiền Giang - Rao truyền Phúc Âm, xây dựng môn đồ Chúa Giê-xu Christ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2c3e50",
+  "theme_color": "#e74c3c",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "vi",
+  "dir": "ltr",
+  "categories": ["religion", "lifestyle", "education"],
+  "icons": [
+    {
+      "src": "assets/images/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/screenshots/mobile-screenshot.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Trang chủ trên điện thoại"
+    },
+    {
+      "src": "assets/images/screenshots/tablet-screenshot.png",
+      "sizes": "1024x768",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Bài giảng trên máy tính bảng"
+    },
+    {
+      "src": "assets/images/screenshots/desktop-screenshot.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Website trên desktop"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Nghe Bài Giảng Mới",
+      "short_name": "Bài Giảng",
+      "description": "Nghe bài giảng Kinh Thánh mới nhất",
+      "url": "/sermons.html",
+      "icons": [
+        {
+          "src": "assets/images/icons/sermon-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Xem Lịch Nhóm",
+      "short_name": "Lịch Nhóm",
+      "description": "Xem lịch nhóm và sự kiện sắp tới",
+      "url": "/news.html",
+      "icons": [
+        {
+          "src": "assets/images/icons/calendar-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Liên Hệ Cầu Nguyện",
+      "short_name": "Cầu Nguyện",
+      "description": "Gửi lời cầu nguyện và nhận hỗ trợ",
+      "url": "/contact.html",
+      "icons": [
+        {
+          "src": "assets/images/icons/prayer-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Dâng Hiến Trực Tuyến",
+      "short_name": "Dâng Hiến",
+      "description": "Dâng hiến cho công việc Chúa",
+      "url": "/giving.html",
+      "icons": [
+        {
+          "src": "assets/images/icons/giving-icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=org.bethlehemtiengiang.app",
+      "id": "org.bethlehemtiengiang.app"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/id1234567890"
+    }
+  ],
+  "prefer_related_applications": false,
+  "protocol_handlers": [
+    {
+      "protocol": "web+bethlehem",
+      "url": "/?url=%s"
+    },
+    {
+      "protocol": "mailto",
+      "url": "/contact.html?email=%s"
+    }
+  ],
+  "share_target": {
+    "action": "/share.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "/upload.html",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".png", ".gif"],
+        "application/pdf": [".pdf"]
+      }
+    }
+  ],
+  "handle_links": "preferred",
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "auto"
+  },
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background": {
+    "service_worker": "sw.js",
+    "type": "module"
+  },
+  "permissions": [
+    "geolocation",
+    "notifications",
+    "clipboard-write"
+  ],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "id": "/",
+  "scope_extensions": [
+    {
+      "origin": "https://*.bethlehemtiengiang.org"
+    }
+  ],
+  "user_preferences": {
+    "color_scheme": "light"
+  },
+  "serviceworker": {
+    "src": "sw.js",
+    "scope": "/",
+    "update_via_cache": "none"
+  }
+}

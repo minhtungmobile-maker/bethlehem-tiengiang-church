@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Hội Thánh Tin Lành Bethlehem Tiền Giang</title>
+    <meta name="description" content="Giới thiệu về Hội Thánh Tin Lành Bethlehem Tiền Giang - Lịch sử hình thành, tầm nhìn, sứ mệnh và ban chấp sự.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .history-timeline {
+            margin: 2rem 0;
+            position: relative;
+        }
+        .timeline-item {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .vision-box, .mission-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        .vision-box h3, .mission-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .leadership-team {
+            margin: 3rem 0;
+        }
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .leader-card {
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .leader-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--accent-color);
+        }
+        .core-values {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .value-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo Hội Thánh" class="logo-img">
+                <div class="logo-text">
+                    <h1>HỘI THÁNH TIN LÀNH</h1>
+                    <div class="church-name">BETHLEHEM</div>
+                    <div class="church-location">Tiền Giang, Việt Nam</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav class="main-nav">
+                <ul id="mainNav">
+                    <li><a href="index.html">🏠 Trang Chủ</a></li>
+                    <li><a href="about.html" class="active">📖 Giới Thiệu</a></li>
+                    <li><a href="ministries.html">👥 Ban Ngành</a></li>
+                    <li><a href="sermons.html">📚 Bài Giảng</a></li>
+                    <li><a href="news.html">📢 Tin Tức</a></li>
+                    <li><a href="giving.html">❤️ Dâng Hiến</a></li>
+                    <li><a href="contact.html">📞 Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title">Giới Thiệu Hội Thánh Bethlehem</h1>
+            
+            <!-- Giới thiệu tổng quan -->
+            <section class="intro-section">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src="assets/images/church-building.jpg" alt="Tòa nhà Hội Thánh" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                    Hội Thánh Tin Lành Bethlehem Tiền Giang được thành lập năm 1990, là một gia đình thuộc linh 
+                    nồng ấm với sứ mệnh rao truyền Phúc Âm cứu rỗi của Chúa Giê-xu Christ cho cộng đồng 
+                    tại Tiền Giang và các vùng lân cận. Chúng tôi tin vào Kinh Thánh là Lời hằng sống của Đức Chúa Trời, 
+                    và mong muốn giúp mọi người có mối quan hệ cá nhân với Chúa.
+                </p>
+            </section>
+
+            <!-- Lịch sử hình thành -->
+            <section class="history-section">
+                <h2>📜 Lịch Sử Hình Thành</h2>
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1990</div>
+                        <p>Hội Thánh được thành lập bởi Mục sư Nguyễn Văn Mẫn với 12 tín hữu đầu tiên, 
+                        nhóm tại một căn nhà thuê ở phường 1, TP. Mỹ Tho.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">1995</div>
+                        <p>Mua được miếng đất đầu tiên và xây dựng ngôi nhà thờ nhỏ với sức chứa 100 người. 
+                        Số tín hữu tăng lên 85 người.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2005</div>
+                        <p>Xây dựng lại nhà thờ mới với sức chứa 300 người. Thành lập các ban ngành: 
+                        Thanh niên, Thiếu nhi, Truyền giáo.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2015</div>
+                        <p>Kỷ niệm 25 năm thành lập. Mở rộng thêm 2 điểm nhóm tại Gò Công và Cai Lậy. 
+                        Số tín hữu đạt 450 người.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <p>Hoàn thành cải tạo và mở rộng khuôn viên. Ra mắt trang web và kênh YouTube 
+                        để tiếp cận cộng đồng trực tuyến.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tầm nhìn & Sứ mệnh -->
+            <section class="vision-mission-section">
+                <h2>🎯 Tầm Nhìn & Sứ Mệnh</h2>
+                <div class="vision-mission">
+                    <div class="vision-box">
+                        <h3>👁️ TẦM NHÌN</h3>
+                        <p>"Trở thành một Hội Thánh mạnh mẽ về đức tin, sâu nhiệm trong Lời Chúa, 
+                        nồng nhiệt trong tình yêu thương, và tích cực trong công tác truyền giáo, 
+                        để nhiều người được biết Chúa Giê-xu Christ và trở thành môn đồ thật của Ngài."</p>
+                        <p><em>"Vậy, hãy đi dạy dỗ muôn dân, hãy nhân danh Đức Cha, Đức Con, và Đức Thánh Linh 
+                        mà làm phép báp-têm cho họ" (Ma-thi-ơ 28:19)</em></p>
+                    </div>
+                    <div class="mission-box">
+                        <h3>🎯 SỨ MỆNH</h3>
+                        <ul>
+                            <li><strong>Thờ phượng:</strong> Dâng lên Chúa sự thờ phượng chân thật trong tâm thần và lẽ thật</li>
+                            <li><strong>Môn đồ hóa:</strong> Đào tạo tín hữu trưởng thành qua việc học và sống theo Lời Chúa</li>
+                            <li><strong>Tương giao:</strong> Xây dựng cộng đồng yêu thương, quan tâm lẫn nhau</li>
+                            <li><strong>Phục vụ:</strong> Sử dụng ân tứ để phục vụ trong Hội Thánh và cộng đồng</li>
+                            <li><strong>Truyền giáo:</strong> Rao truyền Phúc Âm cho người chưa tin tại địa phương và toàn cầu</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Giá trị cốt lõi -->
+            <section class="values-section">
+                <div class="core-values">
+                    <h2 style="color: white; text-align: center;">💎 GIÁ TRỊ CỐT LÕI</h2>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">📖</div>
+                            <h4>KINH THÁNH</h4>
+                            <p>Lời Đức Chúa Trời làm nền tảng cho đức tin và đời sống</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🙏</div>
+                            <h4>CẦU NGUYỆN</h4>
+                            <p>Giao tiếp với Chúa là sức sống của Hội Thánh</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">❤️</div>
+                            <h4>TÌNH YÊU THƯƠNG</h4>
+                            <p>Yêu Chúa và yêu người như chính mình</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🤝</div>
+                            <h4>TƯƠNG GIAO</h4>
+                            <p>Hiệp một trong Đấng Christ, khích lệ nhau</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ban chấp sự -->
+            <section class="leadership-team">
+                <h2>👥 BAN CHẤP SỰ HỘI THÁNH</h2>
+                <p style="margin-bottom: 1.5rem;">Ban chấp sự được bầu lên để chăm sóc và dẫn dắt Hội Thánh theo Lời Chúa.</p>
+                
+                <div class="leaders-grid">
+                    <div class="leader-card">
+                        <img src="assets/images/pastor-man.jpg" alt="Mục sư Quản nhiệm" class="leader-img">
+                        <h3>Mục sư NGUYỄN VĂN MẪN</h3>
+                        <p><strong>Quản nhiệm Hội Thánh</strong></p>
+                        <p>Phụ trách chung, giảng dạy, dẫn dắt tâm linh</p>
+                        <p>📞 0909 111 222</p>
+                    </div>
+                    <div class="leader-card">
+                        <img src="assets/images/elder-huynh.jpg" alt="Trưởng lão Huỳnh" class="leader-img">
+                        <h3>Trưởng lão HUỲNH THANH BÌNH</h3>
+                        <p><strong>Chủ tịch Hội đồng Quản trị</strong></p>
+                        <p>Quản lý tài chính, cơ sở vật chất</p>
+                        <p>📞 0909 333 444</p>
+                    </div>
+                    <div class="leader-card">
+                        <img src="assets/images/deacon-le.jpg" alt="Chấp sự Lê" class="leader-img">
+                        <h3>Chấp sự LÊ THỊ HỒNG</h3>
+                        <p><strong>Trưởng ban Truyền giáo</strong></p>
+                        <p>Phụ trách công tác truyền giáo, từ thiện</p>
+                        <p>📞 0909 555 666</p>
+                    </div>
+                    <div class="leader-card">
+                        <img src="assets/images/deacon-tran.jpg" alt="Chấp sự Trần" class="leader-img">
+                        <h3>Chấp sự TRẦN VĂN MINH</h3>
+                        <p><strong>Trưởng ban Thanh Niên</strong></p>
+                        <p>Phụ trách giới trẻ, hoạt động thanh niên</p>
+                        <p>📞 0909 777 888</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thông tin liên hệ -->
+            <section style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                <h3>📞 Liên Hệ Hội Thánh</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                    <div>
+                        <h4>🏢 Địa chỉ</h4>
+                        <p>Số 123, Đường 3/2, Phường 1<br>TP. Mỹ Tho, Tiền Giang</p>
+                    </div>
+                    <div>
+                        <h4>📞 Điện thoại</h4>
+                        <p>Văn phòng: (073) 1234 567<br>Mục sư: 0909 111 222</p>
+                    </div>
+                    <div>
+                        <h4>📧 Email</h4>
+                        <p>info@bethlehemtiengiang.org<br>truyengiao@bethlehemtiengiang.org</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hội Thánh Tin Lành Bethlehem</h4>
+                    <p>Số 123, Đường 3/2, Phường 1, TP. Mỹ Tho, Tiền Giang</p>
+                    <p>📞 (073) 1234 567</p>
+                    <p>✉️ info@bethlehemtiengiang.org</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Giờ Nhóm</h4>
+                    <p>Chủ Nhật: 8:00 - 10:00 (Sáng)</p>
+                    <p>Thứ Tư: 18:30 - 20:00 (Tối)</p>
+                    <p>Thứ Bảy: 19:00 - 21:00 (Thanh Niên)</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sermons.html">Bài Giảng</a></li>
+                        <li><a href="events.html">Sự Kiện</a></li>
+                        <li><a href="giving.html">Dâng Hiến</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Hội Thánh Tin Lành Bethlehem Tiền Giang. Mọi vinh hiển đều thuộc về Đức Chúa Trời.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('show');
+        });
+
+        // Auto-hide mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

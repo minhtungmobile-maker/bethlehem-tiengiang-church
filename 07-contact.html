@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Hội Thánh Tin Lành Bethlehem Tiền Giang</title>
+    <meta name="description" content="Liên hệ Hội Thánh Tin Lành Bethlehem Tiền Giang - Thông tin liên hệ, bản đồ, và form liên hệ.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .form-textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background: var(--accent-color);
+        }
+        .map-container {
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+        .map-placeholder {
+            background: #f8f9fa;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        .contact-hours {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .hour-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .hour-row:last-child {
+            border-bottom: none;
+        }
+        .emergency-contact {
+            background: #ff6b6b;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .department-contacts {
+            margin: 2rem 0;
+        }
+        .department-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .department-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .zalo-btn {
+            background: #0068FF;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo Hội Thánh" class="logo-img">
+                <div class="logo-text">
+                    <h1>HỘI THÁNH TIN LÀNH</h1>
+                    <div class="church-name">BETHLEHEM</div>
+                    <div class="church-location">Tiền Giang, Việt Nam</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav class="main-nav">
+                <ul id="mainNav">
+                    <li><a href="index.html">🏠 Trang Chủ</a></li>
+                    <li><a href="about.html">📖 Giới Thiệu</a></li>
+                    <li><a href="ministries.html">👥 Ban Ngành</a></li>
+                    <li><a href="sermons.html">📚 Bài Giảng</a></li>
+                    <li><a href="news.html">📢 Tin Tức</a></li>
+                    <li><a href="giving.html">❤️ Dâng Hiến</a></li>
+                    <li><a href="contact.html" class="active">📞 Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title">Liên Hệ Với Chúng Tôi</h1>
+            
+            <!-- Header với câu Kinh Thánh -->
+            <div class="contact-header">
+                <h2 style="color: white;">"Vậy, chúng ta hãy cùng đến gần ngôi ơn phước, 
+                hầu cho được thương xót và tìm được ơn để giúp chúng ta trong thì giờ có cần dùng."</h2>
+                <p style="font-size: 1.1rem;">— Hê-bơ-rơ 4:16</p>
+            </div>
+
+            <!-- Thông tin liên hệ chính -->
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">🏢</div>
+                    <h3>Địa Chỉ Hội Thánh</h3>
+                    <p>Số 123, Đường 3/2<br>Phường 1, TP. Mỹ Tho<br>Tiền Giang, Việt Nam</p>
+                    <button onclick="openMap()" style="background: var(--primary-color); color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 5px; cursor: pointer; margin-top: 1rem;">
+                        📍 Xem Bản Đồ
+                    </button>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Điện Thoại Liên Hệ</h3>
+                    <p><strong>Văn phòng:</strong> (073) 1234 567</p>
+                    <p><strong>Mục sư Quản nhiệm:</strong> 0909 111 222</p>
+                    <p><strong>Fax:</strong> (073) 1234 568</p>
+                    <button onclick="callNumber('0731234567')" style="background: #4CAF50; color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 5px; cursor: pointer; margin-top: 1rem;">
+                        📞 Gọi Ngay
+                    </button>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email & Mạng Xã Hội</h3>
+                    <p><strong>Email chính:</strong> info@bethlehemtiengiang.org</p>
+                    <p><strong>Truyền giáo:</strong> truyengiao@bethlehemtiengiang.org</p>
+                    <p><strong>Thanh niên:</strong> thanhnien@bethlehemtiengiang.org</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                        <button class="whatsapp-btn" onclick="openWhatsApp()">
+                            💬 WhatsApp
+                        </button>
+                        <button class="zalo-btn" onclick="openZalo()">
+                            💙 Zalo
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông tin liên hệ khẩn cấp -->
+            <div class="emergency-contact">
+                <h3>🚨 LIÊN HỆ KHẨN CẤP</h3>
+                <p>Đường dây nóng cầu nguyện và hỗ trợ tâm linh (24/7):</p>
+                <p style="font-size: 1.5rem; font-weight: bold;">📞 0909 888 777</p>
+                <p><em>Dành cho các trường hợp cần cầu nguyện gấp, khủng hoảng tâm linh, hoặc hỗ trợ tinh thần.</em></p>
+            </div>
+
+            <!-- Form liên hệ -->
+            <div class="contact-form">
+                <h3>📝 GỬI TIN NHẮN CHO CHÚNG TÔI</h3>
+                <form id="contactForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label class="form-label">Họ và Tên *</label>
+                        <input type="text" class="form-input" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-input" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Số điện thoại</label>
+                        <input type="tel" class="form-input" id="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Chủ đề *</label>
+                        <select class="form-input" id="subject" required>
+                            <option value="">-- Chọn chủ đề --</option>
+                            <option value="prayer">Cầu nguyện</option>
+                            <option value="visit">Thăm viếng/Học Kinh Thánh</option>
+                            <option value="membership">Gia nhập Hội Thánh</option>
+                            <option value="ministry">Tham gia ban ngành</option>
+                            <option value="donation">Dâng hiến</option>
+                            <option value="event">Sự kiện/Chương trình</option>
+                            <option value="other">Khác</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nội dung tin nhắn *</label>
+                        <textarea class="form-textarea" id="message" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" required>
+                            Tôi đồng ý với chính sách bảo mật của Hội Thánh
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        📤 Gửi Tin Nhắn
+                    </button>
+                </form>
+            </div>
+
+            <!-- Bản đồ -->
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem;">🗺️</div>
+                        <h3>Bản đồ đến Hội Thánh</h3>
+                        <p>Đang tải bản đồ Google Maps...</p>
+                        <button onclick="openMap()" style="background: var(--primary-color); color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 5px; cursor: pointer; margin-top: 1rem;">
+                            📍 Mở Google Maps
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Giờ làm việc -->
+            <div class="contact-hours">
+                <h3>⏰ GIỜ LÀM VIỆC & TIẾP KHÁCH</h3>
+                <div class="hour-row">
+                    <span>Thứ 2 - Thứ 6:</span>
+                    <span>8:00 - 11:30 & 14:00 - 17:00</span>
+                </div>
+                <div class="hour-row">
+                    <span>Thứ 7:</span>
+                    <span>8:00 - 11:30 (Văn phòng đóng cửa chiều)</span>
+                </div>
+                <div class="hour-row">
+                    <span>Chủ Nhật:</span>
+                    <span>Văn phòng đóng cửa (có nhóm thờ phượng)</span>
+                </div>
+                <div class="hour-row">
+                    <span>Giờ nhóm Chủ Nhật:</span>
+                    <span>8:00 - 10:00 (Sáng)</span>
+                </div>
+                <div class="hour-row">
+                    <span>Giờ nhóm Thứ 4:</span>
+                    <span>18:30 - 20:00 (Tối)</span>
+                </div>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    * Vui lòng hẹn trước khi đến gặp Mục sư hoặc ban chấp sự.
+                </p>
+            </div>
+
+            <!-- Liên hệ các ban ngành -->
+            <div class="department-contacts">
+                <h3>👥 LIÊN HỆ CÁC BAN NGÀNH</h3>
+                <div class="department-grid">
+                    <div class="department-card">
+                        <h4>📖 Ban Truyền Giáo</h4>
+                        <p>Chấp sự Lê Thị Hồng</p>
+                        <p>📞 0909 555 666</p>
+                        <p>✉️ truyengiao@bethlehemtiengiang.org</p>
+                    </div>
+                    <div class="department-card">
+                        <h4>👨‍🎤 Ban Thanh Niên</h4>
+                        <p>Chấp sự Trần Văn Minh</p>
+                        <p>📞 0909 777 888</p>
+                        <p>✉️ thanhnien@bethlehemtiengiang.org</p>
+                    </div>
+                    <div class="department-card">
+                        <h4>👶 Ban Thiếu Nhi</h4>
+                        <p>Chị Nguyễn Thị Thu</p>
+                        <p>📞 0909 222 333</p>
+                        <p>✉️ thieunhi@bethlehemtiengiang.org</p>
+                    </div>
+                    <div class="department-card">
+                        <h4>💰 Ban Tài Chính</h4>
+                        <p>Trưởng lão Huỳnh Thanh Bình</p>
+                        <p>📞 0909 333 444</p>
+                        <p>✉️ taichinh@bethlehemtiengiang.org</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Các cách liên hệ khác -->
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+                <h3>🔗 CÁCH KHÁC ĐỂ KẾT NỐI</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+                    <a href="https://facebook.com/bethlehemtiengiang" target="_blank" style="background: #1877F2; color: white; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        📘 Facebook
+                    </a>
+                    <a href="https://youtube.com/@bethlehemtiengiang" target="_blank" style="background: #FF0000; color: white; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        ▶️ YouTube
+                    </a>
+                    <a href="https://zalo.me/group/bethlehem" target="_blank" style="background: #0068FF; color: white; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        💙 Zalo Group
+                    </a>
+                    <a href="mailto:info@bethlehemtiengiang.org" style="background: #EA4335; color: white; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        📧 Gmail
+                    </a>
+                </div>
+            </div>
+
+            <!-- Câu Kinh Thánh khích lệ -->
+            <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border-radius: 10px;">
+                <h3>"Chớ lo phiền chi hết, nhưng trong mọi sự hãy dùng lời cầu nguyện, nài xin, 
+                và sự tạ ơn mà trình các sự cầu xin của mình cho Đức Chúa Trời."</h3>
+                <p style="font-size: 1.1rem;">— Phi-líp 4:6</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hội Thánh Tin Lành Bethlehem</h4>
+                    <p>Số 123, Đường 3/2, Phường 1, TP. Mỹ Tho, Tiền Giang</p>
+                    <p>📞 (073) 1234 567</p>
+                    <p>✉️ info@bethlehemtiengiang.org</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Giờ Nhóm</h4>
+                    <p>Chủ Nhật: 8:00 - 10:00 (Sáng)</p>
+                    <p>Thứ Tư: 18:30 - 20:00 (Tối)</p>
+                    <p>Thứ Bảy: 19:00 - 21:00 (Thanh Niên)</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sermons.html">Bài Giảng</a></li>
+                        <li><a href="events.html">Sự Kiện</a></li>
+                        <li><a href="giving.html">Dâng Hiến</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Hội Thánh Tin Lành Bethlehem Tiền Giang. Mọi vinh hiển đều thuộc về Đức Chúa Trời.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('show');
+        });
+
+        // Auto-hide mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+
+        // Form submission
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simple validation
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                alert('Vui lòng điền đầy đủ thông tin bắt buộc.');
+                return;
+            }
+            
+            // Show success message
+            alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.\n\n' +
+                  'Thông tin đã gửi:\n' +
+                  `Tên: ${formData.name}\n` +
+                  `Email: ${formData.email}\n` +
+                  `Chủ đề: ${formData.subject}`);
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+            
+            // In thực tế, đây sẽ là AJAX request gửi dữ liệu đến server
+            // fetch('/api/contact', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(formData)
+            // })
+        }
+
+        // Contact functions
+        function openMap() {
+            window.open('https://maps.google.com/?q=Số+123+Đường+3/2+Phường+1+TP+Mỹ+Tho+Tiền+Giang', '_blank');
+        }
+
+        function callNumber(number) {
+            if (confirm(`Bạn có muốn gọi đến số ${number} không?`)) {
+                window.location.href = `tel:${number}`;
+            }
+        }
+
+        function openWhatsApp() {
+            window.open('https://wa.me/84909111222?text=Tôi muốn liên hệ với Hội Thánh Bethlehem', '_blank');
+        }
+
+        function openZalo() {
+            window.open('https://zalo.me/0909111222', '_blank');
+        }
+
+        // Check for URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const interest = urlParams.get('interest');
+            const department = urlParams.get('department');
+            
+            if (interest) {
+                document.getElementById('subject').value = interest;
+            }
+            
+            if (department) {
+                const deptMessages = {
+                    'youth': 'Tôi muốn tham gia ban Thanh niên',
+                    'children': 'Tôi muốn đăng ký cho con tham gia ban Thiếu nhi',
+                    'mission': 'Tôi muốn tham gia công tác truyền giáo',
+                    'choir': 'Tôi muốn tham gia ca đoàn',
+                    'welcome': 'Tôi muốn tham gia ban Tiếp đón',
+                    'tech': 'Tôi muốn tham gia ban Kỹ thuật',
+                    'course': 'Tôi muốn đăng ký khóa học Kinh Thánh'
+                };
+                
+                if (deptMessages[department]) {
+                    document.getElementById('message').value = deptMessages[department];
+                    document.getElementById('subject').value = 'ministry';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

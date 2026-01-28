@@ -1,0 +1,21 @@
+/* Playfair Display - Regular */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./playfairdisplay-regular.woff2') format('woff2'),
+         url('./playfairdisplay-regular.woff') format('woff'),
+         url('./playfairdisplay-regular.ttf') format('truetype');
+}
+
+/* Playfair Display - Bold (700) */
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('./playfairdisplay-700.woff2') format('woff2'),
+         url('./playfairdisplay-700.woff') format('woff'),
+         url('./playfairdisplay-700.ttf') format('truetype');
+}

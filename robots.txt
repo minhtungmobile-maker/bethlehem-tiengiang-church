@@ -1,0 +1,6 @@
+﻿User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://bethlehemtiengiang.org/sitemap.xml

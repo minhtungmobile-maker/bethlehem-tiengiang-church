@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Giảng - Hội Thánh Tin Lành Bethlehem Tiền Giang</title>
+    <meta name="description" content="Lưu trữ bài giảng Kinh Thánh, video giảng dạy và tài liệu học tập từ Hội Thánh Tin Lành Bethlehem Tiền Giang.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sermon-filters {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .filter-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--border-color);
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        .sermon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .sermon-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .sermon-card:hover {
+            transform: translateY(-5px);
+        }
+        .sermon-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .sermon-content {
+            padding: 1.5rem;
+        }
+        .sermon-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .sermon-title {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            color: var(--primary-color);
+        }
+        .sermon-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .action-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.3s ease;
+        }
+        .watch-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+        .listen-btn {
+            background: #4CAF50;
+            color: white;
+        }
+        .download-btn {
+            background: #2196F3;
+            color: white;
+        }
+        .featured-sermon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .bible-study {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .study-material {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+        }
+        .page-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .page-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        .live-stream {
+            background: #ff0000;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Logo Hội Thánh" class="logo-img">
+                <div class="logo-text">
+                    <h1>HỘI THÁNH TIN LÀNH</h1>
+                    <div class="church-name">BETHLEHEM</div>
+                    <div class="church-location">Tiền Giang, Việt Nam</div>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <nav class="main-nav">
+                <ul id="mainNav">
+                    <li><a href="index.html">🏠 Trang Chủ</a></li>
+                    <li><a href="about.html">📖 Giới Thiệu</a></li>
+                    <li><a href="ministries.html">👥 Ban Ngành</a></li>
+                    <li><a href="sermons.html" class="active">📚 Bài Giảng</a></li>
+                    <li><a href="news.html">📢 Tin Tức</a></li>
+                    <li><a href="giving.html">❤️ Dâng Hiến</a></li>
+                    <li><a href="contact.html">📞 Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title">Bài Giảng Kinh Thánh</h1>
+            
+            <!-- Live Stream -->
+            <div class="live-stream">
+                <h2>🎥 LIVE STREAM CHỦ NHẬT</h2>
+                <p>Nhóm Chủ Nhật trực tiếp lúc 8:00 sáng</p>
+                <button onclick="openLiveStream()" style="background: white; color: #ff0000; border: none; padding: 0.8rem 2rem; border-radius: 25px; font-weight: bold; cursor: pointer; margin-top: 1rem;">
+                    XEM TRỰC TIẾP NGAY
+                </button>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">
+                    <a href="https://youtube.com/@bethlehemtiengiang" style="color: white; text-decoration: underline;">
+                        Theo dõi kênh YouTube của chúng tôi
+                    </a>
+                </p>
+            </div>
+
+            <!-- Câu Kinh Thánh chủ đạo -->
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+                <h2 style="color: white;">"Lời Chúa là ngọn đèn cho chân tôi, ánh sáng cho đường lối tôi."</h2>
+                <p style="text-align: right; font-size: 1.1rem;">— Thi-thiên 119:105</p>
+            </div>
+
+            <!-- Bộ lọc bài giảng -->
+            <div class="sermon-filters">
+                <h3>🔍 Lọc Bài Giảng</h3>
+                <div class="filter-group">
+                    <button class="filter-btn active" onclick="filterSermons('all')">Tất Cả</button>
+                    <button class="filter-btn" onclick="filterSermons('recent')">Mới Nhất</button>
+                    <button class="filter-btn" onclick="filterSermons('popular')">Phổ Biến</button>
+                    <button class="filter-btn" onclick="filterSermons('ms-man')">Mục sư Mẫn</button>
+                    <button class="filter-btn" onclick="filterSermons('series')">Loạt Bài</button>
+                    <button class="filter-btn" onclick="filterSermons('audio')">Chỉ Audio</button>
+                    <button class="filter-btn" onclick="filterSermons('video')">Chỉ Video</button>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; align-items: center;">
+                    <select id="bookSelect" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+                        <option value="">Toàn bộ Kinh Thánh</option>
+                        <option value="matthew">Ma-thi-ơ</option>
+                        <option value="john">Giăng</option>
+                        <option value="romans">Rô-ma</option>
+                        <option value="corinthians">Cô-rinh-tô</option>
+                        <option value="psalms">Thi-thiên</option>
+                        <option value="proverbs">Châm ngôn</option>
+                    </select>
+                    <input type="text" placeholder="Tìm kiếm bài giảng..." style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+                    <button style="padding: 0.5rem 1.5rem; background: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">
+                        Tìm
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bài giảng nổi bật -->
+            <div class="featured-sermon">
+                <h2>⭐ BÀI GIẢNG NỔI BẬT</h2>
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; align-items: center;">
+                    <div>
+                        <img src="assets/images/featured-sermon.jpg" alt="Bài giảng nổi bật" style="width: 100%; border-radius: 10px;">
+                    </div>
+                    <div>
+                        <h3>"Tình Yêu Đức Chúa Trời Trong Chúa Giê-xu Christ"</h3>
+                        <p><strong>Kinh Thánh:</strong> Rô-ma 8:35-39</p>
+                        <p><strong>Giảng luận:</strong> Mục sư Nguyễn Văn Mẫn</p>
+                        <p><strong>Ngày:</strong> 15/10/2023 | <strong>Lượt xem:</strong> 1,245</p>
+                        <p>Khám phá chiều sâu của tình yêu Đức Chúa Trời qua sự chết và sống lại của Chúa Giê-xu, 
+                        và sự đắc thắng của chúng ta trong mọi hoàn cảnh.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="action-btn watch-btn" onclick="playSermon('featured')">
+                                ▶️ Xem Video
+                            </button>
+                            <button class="action-btn listen-btn" onclick="playAudio('featured')">
+                                🔈 Nghe Audio
+                            </button>
+                            <button class="action-btn download-btn" onclick="downloadSermon('featured')">
+                                📥 Tải Xuống
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Danh sách bài giảng -->
+            <h3>📚 DANH SÁCH BÀI GIẢNG</h3>
+            <div class="sermon-grid" id="sermonList">
+                <!-- Bài giảng 1 -->
+                <div class="sermon-card" data-category="recent ms-man video">
+                    <img src="assets/images/sermon1.jpg" alt="Bài giảng 1" class="sermon-thumbnail">
+                    <div class="sermon-content">
+                        <div class="sermon-meta">
+                            <span>12/11/2023</span>
+                            <span>⏱️ 45 phút</span>
+                        </div>
+                        <h3 class="sermon-title">"Ân Điển Của Đức Chúa Trời"</h3>
+                        <p><strong>Ê-phê-sô 2:8-9</strong></p>
+                        <p>Khám phá ý nghĩa của ân điển và tại sao chúng ta được cứu bởi đức tin...</p>
+                        <div class="sermon-actions">
+                            <button class="action-btn watch-btn" onclick="playSermon(1)">
+                                ▶️
+                            </button>
+                            <button class="action-btn listen-btn" onclick="playAudio(1)">
+                                🔈
+                            </button>
+                            <button class="action-btn download-btn" onclick="downloadSermon(1)">
+                                📥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài giảng 2 -->
+                <div class="sermon-card" data-category="recent popular audio">
+                    <img src="assets/images/sermon2.jpg" alt="Bài giảng 2" class="sermon-thumbnail">
+                    <div class="sermon-content">
+                        <div class="sermon-meta">
+                            <span>05/11/2023</span>
+                            <span>⏱️ 38 phút</span>
+                        </div>
+                        <h3 class="sermon-title">"Sự Cầu Nguyện Hiệu Quả"</h3>
+                        <p><strong>Ma-thi-ơ 6:5-15</strong></p>
+                        <p>Học cách cầu nguyện theo mẫu cầu nguyện Chúa dạy và kinh nghiệm quyền năng của sự cầu nguyện.</p>
+                        <div class="sermon-actions">
+                            <button class="action-btn watch-btn" onclick="playSermon(2)">
+                                ▶️
+                            </button>
+                            <button class="action-btn listen-btn" onclick="playAudio(2)">
+                                🔈
+                            </button>
+                            <button class="action-btn download-btn" onclick="downloadSermon(2)">
+                                📥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài giảng 3 -->
+                <div class="sermon-card" data-category="series video">
+                    <img src="assets/images/sermon3.jpg" alt="Bài giảng 3" class="sermon-thumbnail">
+                    <div class="sermon-content">
+                        <div class="sermon-meta">
+                            <span>29/10/2023</span>
+                            <span>⏱️ 52 phút</span>
+                        </div>
+                        <h3 class="sermon-title">"Đời Sống Thánh Khiết" - Phần 3</h3>
+                        <p><strong>1 Phi-e-rơ 1:13-16</strong></p>
+                        <p>Phần cuối của loạt bài về đời sống thánh khiết. Làm thế nào để sống đẹp lòng Chúa...</p>
+                        <div class="sermon-actions">
+                            <button class="action-btn watch-btn" onclick="playSermon(3)">
+                                ▶️
+                            </button>
+                            <button class="action-btn listen-btn" onclick="playAudio(3)">
+                                🔈
+                            </button>
+                            <button class="action-btn download-btn" onclick="downloadSermon(3)">
+                                📥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài giảng 4 -->
+                <div class="sermon-card" data-category="popular ms-man">
+                    <img src="assets/images/sermon4.jpg" alt="Bài giảng 4" class="sermon-thumbnail">
+                    <div class="sermon-content">
+                        <div class="sermon-meta">
+                            <span>22/10/2023</span>
+                            <span>⏱️ 40 phút</span>
+                        </div>
+                        <h3 class="sermon-title">"Chiến Thắng Tội Lỗi"</h3>
+                        <p><strong>Rô-ma 6:1-14</strong></p>
+                        <p>Làm thế nào để có chiến thắng trong đời sống thuộc linh? Khám phá quyền năng của Thánh Linh.</p>
+                        <div class="sermon-actions">
+                            <button class="action-btn watch-btn" onclick="playSermon(4)">
+                                ▶️
+                            </button>
+                            <button class="action-btn listen-btn" onclick="playAudio(4)">
+                                🔈
+                            </button>
+                            <button class="action-btn download-btn" onclick="downloadSermon(4)">
+                                📥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài giảng 5 -->
+                <div class="sermon-card" data-category="audio">
+                    <img src="assets/images/sermon5.jpg" alt="Bài giảng 5" class="sermon-thumbnail">
+                    <div class="sermon-content">
+                        <div class="sermon-meta">
+                            <span>15/10/2023</span>
+                            <span>⏱️ 35 phút</span>
+                        </div>
+                        <h3 class="sermon-title">"Tình Yêu Thương Anh Em"</h3>
+                        <p><strong>1 Giăng 4:7-21</strong></p>
+                        <p>Khám phá bản chất của tình yêu thương Đức Chúa Trời và cách thể hiện tình yêu với anh em.</p>
+                        <div class="sermon-actions">
+                            <button class="action-btn watch-btn" onclick="playSermon(5)">
+                                ▶️
+                            </button>
+                            <button class="action-btn listen-btn" onclick="playAudio(5)">
+                                🔈
+                            </button>
+                            <button class="action-btn download-btn" onclick="downloadSermon(5)">
+                                📥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài giảng 6 -->
+                <div class="sermon-card" data-category="series">
+                    <img src="assets/images/sermon6.jpg" alt="Bài giảng 6" class="sermon-thumbnail">
+                    <div class="sermon-content">
+                        <div class="sermon-meta">
+                            <span>08/10/2023</span>
+                            <span>⏱️ 48 phút</span>
+                        </div>
+                        <h3 class="sermon-title">"Đức Tin và Hành Động"</h3>
+                        <p><strong>Gia-cơ 2:14-26</strong></p>
+                        <p>Mối quan hệ giữa đức tin và việc làm. Đức tin thật thể hiện qua hành động như thế nào?</p>
+                        <div class="sermon-actions">
+                            <button class="action-btn watch-btn" onclick="playSermon(6)">
+                                ▶️
+                            </button>
+                            <button class="action-btn listen-btn" onclick="playAudio(6)">
+                                🔈
+                            </button>
+                            <button class="action-btn download-btn" onclick="downloadSermon(6)">
+                                📥
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phân trang -->
+            <div class="pagination">
+                <button class="page-btn">«</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">5</button>
+                <button class="page-btn">»</button>
+            </div>
+
+            <!-- Tài liệu học Kinh Thánh -->
+            <div class="bible-study">
+                <h3>📖 TÀI LIỆU HỌC KINH THÁNH</h3>
+                <div class="study-material">
+                    <h4>🆓 Tải Miễn Phí</h4>
+                    <ul>
+                        <li><a href="#" onclick="downloadMaterial('basic-doctrine')">📄 Giáo lý Cơ bản Cơ Đốc (PDF)</a></li>
+                        <li><a href="#" onclick="downloadMaterial('prayer-guide')">📄 Hướng dẫn Cầu nguyện Hằng ngày</a></li>
+                        <li><a href="#" onclick="downloadMaterial('bible-reading-plan')">📄 Kế hoạch Đọc Kinh Thánh 1 năm</a></li>
+                        <li><a href="#" onclick="downloadMaterial('family-worship')">📄 Hướng dẫn Thờ phượng Gia đình</a></li>
+                    </ul>
+                </div>
+                <div class="study-material">
+                    <h4>🎓 Khóa Học Trực Tuyến</h4>
+                    <p>Tham gia các khóa học Kinh Thánh trực tuyến miễn phí:</p>
+                    <ul>
+                        <li><strong>Khóa Căn bản:</strong> Dành cho tân tín hữu (bắt đầu mỗi tháng)</li>
+                        <li><strong>Khóa Sâu nhiệm:</strong> Nghiên cứu sâu từng sách Kinh Thánh</li>
+                        <li><strong>Khóa Môn đồ hóa:</strong> Đào tạo trở thành môn đồ Chúa</li>
+                    </ul>
+                    <button onclick="registerCourse()" style="background: var(--primary-color); color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 5px; cursor: pointer; margin-top: 1rem;">
+                        Đăng Ký Khóa Học
+                    </button>
+                </div>
+            </div>
+
+            <!-- Đăng ký nhận bài giảng mới -->
+            <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 2rem; border-radius: 10px; text-align: center; margin: 2rem 0;">
+                <h3>📧 NHẬN BÀI GIẢNG MỚI QUA EMAIL</h3>
+                <p>Đăng ký để nhận bài giảng mới mỗi tuần và các tài liệu học Kinh Thánh hữu ích.</p>
+                <div style="max-width: 500px; margin: 1rem auto;">
+                    <input type="email" placeholder="Nhập email của bạn" style="width: 70%; padding: 0.8rem; border: none; border-radius: 5px 0 0 5px;">
+                    <button style="width: 30%; padding: 0.8rem; background: #ff6b6b; color: white; border: none; border-radius: 0 5px 5px 0; cursor: pointer;">
+                        Đăng Ký
+                    </button>
+                </div>
+                <p style="font-size: 0.9rem; opacity: 0.9;">Chúng tôi tôn trọng sự riêng tư của bạn. Không spam.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Hội Thánh Tin Lành Bethlehem</h4>
+                    <p>Số 123, Đường 3/2, Phường 1, TP. Mỹ Tho, Tiền Giang</p>
+                    <p>📞 (073) 1234 567</p>
+                    <p>✉️ info@bethlehemtiengiang.org</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Giờ Nhóm</h4>
+                    <p>Chủ Nhật: 8:00 - 10:00 (Sáng)</p>
+                    <p>Thứ Tư: 18:30 - 20:00 (Tối)</p>
+                    <p>Thứ Bảy: 19:00 - 21:00 (Thanh Niên)</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="sermons.html">Bài Giảng</a></li>
+                        <li><a href="events.html">Sự Kiện</a></li>
+                        <li><a href="giving.html">Dâng Hiến</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 Hội Thánh Tin Lành Bethlehem Tiền Giang. Mọi vinh hiển đều thuộc về Đức Chúa Trời.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://youtube.com/@bethlehemtiengiang" style="color: white; margin: 0 0.5rem;">YouTube</a> |
+                    <a href="https://facebook.com/bethlehemtiengiang" style="color: white; margin: 0 0.5rem;">Facebook</a> |
+                    <a href="https://zalo.me/group/bethlehem" style="color: white; margin: 0 0.5rem;">Zalo</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('show');
+        });
+
+        // Auto-hide mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+
+        // Filter sermons
+        function filterSermons(category) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Filter cards
+            const cards = document.querySelectorAll('.sermon-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Play sermon functions
+        function openLiveStream() {
+            window.open('https://youtube.com/@bethlehemtiengiang/live', '_blank');
+        }
+
+        function playSermon(id) {
+            alert(`Đang mở bài giảng video #${id}. Trong phiên bản thực tế, đây sẽ là trình phát video.`);
+            // Thực tế: window.open(`/sermons/video/${id}`, '_blank');
+        }
+
+        function playAudio(id) {
+            alert(`Đang phát audio bài giảng #${id}.`);
+            // Thực tế: new Audio(`/sermons/audio/${id}.mp3`).play();
+        }
+
+        function downloadSermon(id) {
+            alert(`Đang tải xuống bài giảng #${id}.`);
+            // Thực tế: window.open(`/sermons/download/${id}`, '_blank');
+        }
+
+        function downloadMaterial(name) {
+            alert(`Đang tải tài liệu: ${name}`);
+        }
+
+        function registerCourse() {
+            window.location.href = 'contact.html?interest=course';
+        }
+    </script>
+</body>
+</html>
